@@ -1,0 +1,241 @@
+.hero_area {
+  height: calc(100vh - 30px);
+  background: linear-gradient(to right, $primary2 55%, $primary1 55%);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.sub_page .hero_area {
+  height: auto;
+  background: none;
+  background-color: $primary2;
+}
+
+.hero_area.sub_pages {
+  height: auto;
+}
+
+.header_section {
+  overflow-x: hidden;
+  .container-fluid {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+
+.custom_nav-container.navbar-expand-lg {
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        padding: 10px 15px;
+        color: $white;
+        text-align: center;
+      }
+    }
+  }
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: initial;
+}
+
+.btn,
+.btn:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.custom_nav-container .nav_search-btn {
+  background-image: url(../images/search-icon.png);
+  background-size: 17px;
+  background-repeat: no-repeat;
+  background-position-y: 7px;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border: none;
+}
+
+.custom_nav-container {
+  form {
+    padding-top: 7px;
+  }
+}
+
+.navbar-brand {
+  margin-right: 5%;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 35px;
+    margin-right: 5px;
+  }
+
+  span {
+    font-weight: bold;
+    color: $white;
+    font-size: 24px;
+  }
+}
+
+.custom_nav-container {
+  z-index: 99999;
+  padding: 0;
+  height: 70px;
+}
+
+.custom_nav-container .navbar-toggler {
+  outline: none;
+
+  .navbar-toggler-icon {
+    background-image: url(../images/menu.png);
+    background-size: 30px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.lg_toggl-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 56px;
+  height: 40px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.slider_section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.slider_section .carousel-control-prev,
+.slider_section .carousel-control-next {
+  position: absolute;
+  top: 50%;
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 100%;
+  opacity: 1;
+  background-repeat: no-repeat;
+  background-size: 14px;
+  background-position: center;
+  background-color: #de7f31;
+  margin: 2px;
+  transform: translateY(-50%);
+}
+
+.slider_section .carousel-control-prev {
+  left: 8.5%;
+  background-image: url(../images/prev.png);
+}
+
+.slider_section .carousel-control-next {
+  right: 8.5%;
+  background-image: url(../images/next.png);
+}
+
+.slider_section .carousel_btn-container {
+  width: 120px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  left: 8.5%;
+  z-index: 999;
+  transform: translateY(50%);
+}
+
+.slider_section ol.carousel-indicators {
+  margin: 0;
+  width: 75px;
+  bottom: 45px;
+  right: 25px;
+}
+
+.slider_section ol.carousel-indicators li {
+  border-radius: 100%;
+  text-indent: 0px;
+  text-align: center;
+  line-height: 55px;
+  color: $white;
+  background-color: transparent;
+  opacity: 1;
+  display: none;
+}
+
+.slider_section ol.carousel-indicators li.active {
+  display: block;
+}
+
+.experience_section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  display: flex;
+  align-items: center;
+}
+
+.experience_section .detail-box {
+  margin-top: 20px;
+}
+
+.experience_section .detail-box .btn-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 45px -5px 0 -5px;
+}
+
+.experience_section .detail-box .btn-box a {
+  text-align: center;
+  width: 165px;
+  font-size: 15px;
+  margin: 5px;
+}
+
+.experience_section .detail-box .btn-box .btn-1 {
+  display: inline-block;
+  padding: 10px 0;
+  background-color: #ff4f5a;
+  color: #ffffff;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  border-radius: 0;
+
+  &:hover {
+    background-color: transparent;
+    border-color: #ff4f5a;
+    color: #ff4f5a;
+  }
+}
+
+.experience_section .detail-box .btn-box .btn-2 {
+  display: inline-block;
+  padding: 10px 0;
+  background-color: #ffffff;
+  color: #252525;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  border-radius: 0;
+
+  &:hover {
+    background-color: transparent;
+    border-color: #ffffff;
+    color: #ffffff;
+  }
+}
