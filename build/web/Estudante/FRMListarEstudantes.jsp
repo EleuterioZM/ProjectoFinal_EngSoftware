@@ -23,36 +23,36 @@
     </head>
     <body>
         <div class="container mt-4">
-    <%-- Exibir mensagens de sucesso ou erro --%>
-    <c:choose>
-        <c:when test="${param.message == 'deleteSuccess'}">
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Estudante excluído com sucesso!
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </c:when>
-        <c:when test="${param.message == 'updateSuccess'}">
-            <div class="alert alert-info alert-dismissible fade show" role="alert">
-              Estudante actualizado com sucesso!
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </c:when>
-      
-        <c:when test="${param.message == 'addSuccess'}">
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Estudante  cadastrado com sucesso.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </c:when>
-        
-    </c:choose>
-</div>
+            <%-- Exibir mensagens de sucesso ou erro --%>
+            <c:choose>
+                <c:when test="${param.message == 'deleteSuccess'}">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Estudante excluído com sucesso!
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </c:when>
+                <c:when test="${param.message == 'updateSuccess'}">
+                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        Estudante actualizado com sucesso!
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </c:when>
+
+                <c:when test="${param.message == 'addSuccess'}">
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        Estudante  cadastrado com sucesso.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </c:when>
+
+            </c:choose>
+        </div>
         <div class="container">
             <h1 class="mt-4" style="color:white">Listagem de Estudantes</h1>
             <script src="../js/alertas.js"></script>
@@ -66,7 +66,7 @@
                         <th scope="col">Número de Matrícula</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Apelido</th>
-                      
+
                         <th scope="col">Turma</th>
                         <th scope="col">Ações</th>
                     </tr>
@@ -95,7 +95,7 @@
                         <td>
                             <%--         <a href="javascript:void(0);" onclick="visualizarEstudante(<%= estudante.getNrMatricula()%>)" class="btn btn-success btn-sm"><i class="fas fa-eye"></i></a>
                             --%>
-    <a href="${pageContext.request.contextPath}/EstudanteServlet?action=view&nrMatricula=<%= estudante.getNrMatricula()%>" class="btn btn-success btn-sm"><i class="fas fa-eye"></i></a>
+                            <a href="${pageContext.request.contextPath}/EstudanteServlet?action=view&nrMatricula=<%= estudante.getNrMatricula()%>" class="btn btn-success btn-sm"><i class="fas fa-eye"></i></a>
                             <a href="javascript:void(0);" onclick="editarEstudante(<%= estudante.getNrMatricula()%>)" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
                                 <%--    <a href="javascript:void(0);" onclick="excluirEstudante(<%= estudante.getNrMatricula() %>, '<%= estudante.getNome() %>')" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                                 --%><a href="${pageContext.request.contextPath}/exclusao.jsp?nrMatricula=<%= estudante.getNrMatricula()%>&nome=<%= estudante.getNome()%>" class="btn btn-danger btn-sm">
@@ -130,26 +130,26 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
         <script>
-                                
-function visualizarEstudante(nrMatricula) {
-    window.location.href = "${pageContext.request.contextPath}/EstudanteServlet?action=view&nrMatricula=" + nrMatricula;
-}
+
+                                function visualizarEstudante(nrMatricula) {
+                                    window.location.href = "${pageContext.request.contextPath}/EstudanteServlet?action=view&nrMatricula=" + nrMatricula;
+                                }
 
                                 function editarEstudante(nrMatricula) {
                                     window.location.href = "${pageContext.request.contextPath}/EstudanteServlet?action=edit&nrMatricula=" + nrMatricula;
                                 }
-                     
+
         </script>
-  <script>
-    // Esconder alertas após 5 segundos
-    $(document).ready(function(){
-        $(".alert").each(function(index, element) {
-            var alert = $(element);
-            setTimeout(function() {
-                alert.alert('close');
-            }, 5000);
-        });
-    });
-</script>
+        <script>
+            // Esconder alertas após 5 segundos
+            $(document).ready(function () {
+                $(".alert").each(function (index, element) {
+                    var alert = $(element);
+                    setTimeout(function () {
+                        alert.alert('close');
+                    }, 5000);
+                });
+            });
+        </script>
     </body>
 </html>
