@@ -2,6 +2,10 @@ package Controller;
 
 import DAO.AvaliacaoDAO;
 import Model.Avaliacao;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.List;
@@ -10,7 +14,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import java.io.File;
+import java.io.FileInputStream;
+import javax.servlet.ServletOutputStream;
 @WebServlet(name = "AvaliacaoServlet", urlPatterns = {"/AvaliacaoServlet"})
 public class AvaliacaoServlet extends HttpServlet {
 
@@ -44,7 +50,9 @@ public class AvaliacaoServlet extends HttpServlet {
                 case "visualizar":
                     visualizarAvaliacao(request, response);
                     break;
-
+                case "report":
+                     Relatorio(request, response);
+                        break;
                 default:
                     listAvaliacoes(request, response);
                     break;
@@ -198,6 +206,56 @@ public class AvaliacaoServlet extends HttpServlet {
     } else {
         request.setAttribute("mensagem", "ID de avaliação inválido.");
         request.getRequestDispatcher("/Avaliacao/FRMListarAvaliacoes.jsp").forward(request, response);
+    }
+}
+
+   
+
+
+
+private void Relatorio(HttpServletRequest request, HttpServletResponse response) {
+    // Configuração do documento PDF
+    Document documento = new Document();
+
+    try {
+        // Diretório onde o PDF será temporariamente armazenado (pasta "temp" do servidor)
+        String tempDir = System.getProperty("java.io.tmpdir");
+        String filePath = tempDir + File.separator + "relatorio.pdf";
+        
+        // Cria um novo arquivo PDF
+        PdfWriter.getInstance(documento, new FileOutputStream(filePath));
+        
+        // Abre o documento
+        documento.open();
+        
+        // Adiciona conteúdo ao documento
+        documento.add(new Paragraph("Este é um exemplo de relatório em PDF gerado pelo iTextPDF."));
+        
+        // Fecha o documento
+        documento.close();
+        
+        // Informa ao navegador que o arquivo PDF será baixado
+        response.setContentType("application/pdf");
+        response.setHeader("Content-Disposition", "attachment; filename=relatorio.pdf");
+        
+        // Escreve o conteúdo do arquivo PDF no fluxo de saída da resposta
+        ServletOutputStream out = response.getOutputStream();
+        FileInputStream fis = new FileInputStream(new File(filePath));
+        byte[] buffer = new byte[4096];
+        int bytesRead;
+        while ((bytesRead = fis.read(buffer)) != -1) {
+            out.write(buffer, 0, bytesRead);
+        }
+        
+        // Fecha os fluxos de entrada e saída
+        fis.close();
+        out.flush();
+        
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        // Fecha o documento
+        documento.close();
     }
 }
 

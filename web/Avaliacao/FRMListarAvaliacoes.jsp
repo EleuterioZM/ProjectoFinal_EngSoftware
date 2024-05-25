@@ -57,6 +57,8 @@
             <h1 class="mt-4" style="color:white">Listagem de Avaliações</h1>
 
             <div class="text-right mb-4">
+<a href="${pageContext.request.contextPath}/AvaliacaoServlet?action=report" class="btn btn-info">Gerar Relatório</a>
+
 
                 <a href="${pageContext.request.contextPath}/Avaliacao/FRMCadastroAvaliacao.jsp" class="btn btn-success">Adicionar Curso</a>
             </div>
