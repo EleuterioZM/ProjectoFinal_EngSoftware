@@ -1,8 +1,10 @@
 package Controller;
 
 import DAO.EstudanteDAO;
+import DAO.RealizaDAO;
 import DAO.TurmaDAO;
 import Model.Estudante;
+import Model.Realiza;
 import Model.Turma;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
@@ -295,7 +297,7 @@ public class EstudanteServlet extends HttpServlet {
         response.sendRedirect(request.getContextPath() + "/EstudanteServlet?action=list&viewError=true");
     }
 }
- private void generateReport(HttpServletRequest request, HttpServletResponse response) {
+ private void generateReporte(HttpServletRequest request, HttpServletResponse response) {
     Document document = new Document();
 
     try {
@@ -391,13 +393,13 @@ public class EstudanteServlet extends HttpServlet {
     }
 }
 
-private void generateReporte(HttpServletRequest request, HttpServletResponse response) {
+private void generateReport(HttpServletRequest request, HttpServletResponse response) {
     Document document = new Document();
 
     try {
         // Diretório onde o PDF será temporariamente armazenado (pasta "temp" do servidor)
         String tempDir = System.getProperty("java.io.tmpdir");
-        String filePath = tempDir + File.separator + "relatorio_estudantes.pdf";
+        String filePath = tempDir + File.separator + "relatorio_realizacoes.pdf";
 
         // Cria um novo arquivo PDF
         PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(filePath));
@@ -407,24 +409,24 @@ private void generateReporte(HttpServletRequest request, HttpServletResponse res
 
         // Adiciona título ao documento
         Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 18, BaseColor.BLACK);
-        Paragraph titulo = new Paragraph("Relatório de Estudantes", titleFont);
+        Paragraph titulo = new Paragraph("Relatório de Realizações", titleFont);
         titulo.setAlignment(Element.ALIGN_CENTER);
         titulo.setSpacingAfter(20);
         document.add(titulo);
 
-        // Cria uma tabela com 4 colunas
-        PdfPTable tabela = new PdfPTable(4);
+        // Cria uma tabela com 3 colunas
+        PdfPTable tabela = new PdfPTable(3);
         tabela.setWidthPercentage(100);
         tabela.setSpacingBefore(10f);
         tabela.setSpacingAfter(10f);
 
         // Define as larguras das colunas
-        float[] columnWidths = {2f, 2f, 3f, 3f};
+        float[] columnWidths = {2f, 2f, 2f};
         tabela.setWidths(columnWidths);
 
         // Adiciona cabeçalhos à tabela
         Font headerFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.WHITE);
-        String[] headers = {"Nr Matrícula", "Nome", "Apelido", "Contato"};
+        String[] headers = {"ID Avaliação", "ID Estudante", "Nota"};
         for (String header : headers) {
             PdfPCell headerCell = new PdfPCell(new Paragraph(header, headerFont));
             headerCell.setBackgroundColor(BaseColor.DARK_GRAY);
@@ -432,17 +434,20 @@ private void generateReporte(HttpServletRequest request, HttpServletResponse res
             headerCell.setPadding(10);
             tabela.addCell(headerCell);
         }
-
+        RealizaDAO realizaDAO = new RealizaDAO();
         // Recupera os dados da base de dados
-        List<Estudante> listaEstudantes = estudanteDAO.listarEstudantesComTurma();
+        List<Realiza> listaRealizacoes = realizaDAO.listarRealizacoes(); // Certifique-se de ter o DAO de Realiza acessível aqui
         Font cellFont = FontFactory.getFont(FontFactory.HELVETICA, 10, BaseColor.BLACK);
 
         // Adiciona os dados à tabela
-        for (Estudante estudante : listaEstudantes) {
-            tabela.addCell(new PdfPCell(new Paragraph(estudante.getNrMatricula().toString(), cellFont)));
-            tabela.addCell(new PdfPCell(new Paragraph(estudante.getNome(), cellFont)));
-            tabela.addCell(new PdfPCell(new Paragraph(estudante.getApelido(), cellFont)));
-            tabela.addCell(new PdfPCell(new Paragraph(estudante.getContacto(), cellFont)));
+        for (Realiza realizacao : listaRealizacoes) {
+            PdfPCell idAvaliacaoCell = new PdfPCell(new Paragraph(Integer.toString(realizacao.getId().getIdAvaliacao()), cellFont));
+            PdfPCell idEstudanteCell = new PdfPCell(new Paragraph(Integer.toString(realizacao.getId().getIdEstudante()), cellFont));
+            PdfPCell notaCell = new PdfPCell(new Paragraph(realizacao.getNota().toString(), cellFont));
+
+            tabela.addCell(idAvaliacaoCell);
+            tabela.addCell(idEstudanteCell);
+            tabela.addCell(notaCell);
         }
 
         // Adiciona a tabela ao documento
@@ -456,7 +461,7 @@ private void generateReporte(HttpServletRequest request, HttpServletResponse res
         document.add(assinadoPor);
 
         // Adiciona uma linha para assinatura
-        Paragraph linhaAssinatura = new Paragraph("__________________________________\nEleuterio Zacarias Mabecuane\n", signatureFont);
+        Paragraph linhaAssinatura = new Paragraph("__________________________________\nNome do Assinante\n", signatureFont);
         linhaAssinatura.setAlignment(Element.ALIGN_CENTER);
         document.add(linhaAssinatura);
 
@@ -465,7 +470,7 @@ private void generateReporte(HttpServletRequest request, HttpServletResponse res
 
         // Informa ao navegador que o arquivo PDF será baixado
         response.setContentType("application/pdf");
-        response.setHeader("Content-Disposition", "attachment; filename=relatorio_estudantes.pdf");
+        response.setHeader("Content-Disposition", "attachment; filename=relatorio_realizacoes.pdf");
 
         // Escreve o conteúdo do arquivo PDF no fluxo de saída da resposta
         ServletOutputStream out = response.getOutputStream();

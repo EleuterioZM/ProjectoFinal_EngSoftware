@@ -72,25 +72,29 @@ public final class FRMListarRealizas_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("        <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" rel=\"stylesheet\">\n");
       out.write("        <!-- Adicione aqui os links para os arquivos CSS de ícones, como Font Awesome -->\n");
       out.write("        <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css\" rel=\"stylesheet\">\n");
+      out.write("        <script src=\"../js/scripts.js\"></script>\n");
       out.write("        <style>\n");
       out.write("            body {\n");
       out.write("                background-color: #ff9966; /* Cor de fundo */\n");
       out.write("            }\n");
       out.write("        </style>\n");
-      out.write("     \n");
+      out.write("\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <div class=\"container mt-4\">\n");
-      out.write("    ");
+      out.write("            ");
       out.write("\n");
-      out.write("    ");
+      out.write("            ");
       if (_jspx_meth_c_choose_0(_jspx_page_context))
         return;
       out.write("\n");
-      out.write("</div>\n");
+      out.write("        </div>\n");
       out.write("        <div class=\"container\">\n");
       out.write("            <h1 class=\"mt-4\" style=\"color:white\">Listagem de Realizações</h1>\n");
       out.write("            <div class=\"text-right mb-4\">\n");
+      out.write("                 <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("/RealizaServlet?action=generateReport\" class=\"btn btn-info\">Gerar Relatório</a>\n");
       out.write("                <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("/NotaRealiza/FRMRealizaCadastrar.jsp\" class=\"btn btn-success\">Adicionar Nota</a>\n");
@@ -117,55 +121,55 @@ public final class FRMListarRealizas_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\n");
       out.write("                    <tr>\n");
       out.write("                        <td>");
-      out.print( count );
+      out.print( count);
       out.write("</td>\n");
       out.write("                        <td>");
-      out.print( realizacao.getId().getIdAvaliacao() );
+      out.print( realizacao.getId().getIdAvaliacao());
       out.write("</td>\n");
       out.write("                        <td>");
-      out.print( realizacao.getId().getIdEstudante() );
+      out.print( realizacao.getId().getIdEstudante());
       out.write("</td>\n");
       out.write("                        <td>");
-      out.print( realizacao.getNota() );
+      out.print( realizacao.getNota());
       out.write("</td>\n");
       out.write("                        <td>\n");
       out.write("                            <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("/RealizaServlet?action=visualizar&idEstudante=");
-      out.print( realizacao.getId().getIdEstudante() );
+      out.print( realizacao.getId().getIdEstudante());
       out.write("&idAvaliacao=");
-      out.print( realizacao.getId().getIdAvaliacao() );
+      out.print( realizacao.getId().getIdAvaliacao());
       out.write("&nota=");
-      out.print( realizacao.getNota() );
+      out.print( realizacao.getNota());
       out.write("\" class=\"btn btn-success btn-sm\">\n");
       out.write("                                <i class=\"fas fa-eye\"></i>\n");
       out.write("                            </a>\n");
       out.write("                            <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("/RealizaServlet?action=edit&idEstudante=");
-      out.print( realizacao.getId().getIdEstudante() );
+      out.print( realizacao.getId().getIdEstudante());
       out.write("&idAvaliacao=");
-      out.print( realizacao.getId().getIdAvaliacao() );
+      out.print( realizacao.getId().getIdAvaliacao());
       out.write("&nota=");
-      out.print( realizacao.getNota() );
+      out.print( realizacao.getNota());
       out.write("\" class=\"btn btn-primary btn-sm\">\n");
       out.write("                                <i class=\"fas fa-edit\"></i>\n");
       out.write("                            </a>\n");
       out.write("                            <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("/NotaRealiza/FRMExclusaoRealiza.jsp?idEstudante=");
-      out.print( realizacao.getId().getIdEstudante() );
+      out.print( realizacao.getId().getIdEstudante());
       out.write("&idAvaliacao=");
-      out.print( realizacao.getId().getIdAvaliacao() );
+      out.print( realizacao.getId().getIdAvaliacao());
       out.write("&nota=");
-      out.print( realizacao.getNota() );
+      out.print( realizacao.getNota());
       out.write("\" class=\"btn btn-danger btn-sm\">\n");
       out.write("                                <i class=\"fas fa-trash\"></i>\n");
       out.write("                            </a>\n");
       out.write("                        </td>\n");
       out.write("                    </tr>\n");
       out.write("                    ");
- } 
+ }
       out.write("\n");
       out.write("                </tbody>\n");
       out.write("            </table>\n");
@@ -174,18 +178,19 @@ public final class FRMListarRealizas_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("        <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>\n");
       out.write("        <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\"></script>\n");
       out.write("        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"></script>\n");
-      out.write("      <script>\n");
-      out.write("    // Esconder alertas após 5 segundos\n");
-      out.write("    $(document).ready(function(){\n");
-      out.write("        window.setTimeout(function() {\n");
-      out.write("            $(\".alert\").fadeTo(500, 0).slideUp(500, function(){\n");
-      out.write("                $(this).remove();\n");
+      out.write("        <script>\n");
+      out.write("            // Esconder alertas após 5 segundos\n");
+      out.write("            $(document).ready(function () {\n");
+      out.write("                $(\".alert\").each(function (index, element) {\n");
+      out.write("                    var alert = $(element);\n");
+      out.write("                    setTimeout(function () {\n");
+      out.write("                        alert.alert('close');\n");
+      out.write("                    }, 5000);\n");
+      out.write("                });\n");
       out.write("            });\n");
-      out.write("        }, 5000); // Tempo ajustado para 5 segundos\n");
-      out.write("    });\n");
-      out.write("</script>\n");
+      out.write("        </script>\n");
       out.write("\n");
-      out.write("        \n");
+      out.write("\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
@@ -213,27 +218,27 @@ public final class FRMListarRealizas_jsp extends org.apache.jasper.runtime.HttpJ
     if (_jspx_eval_c_choose_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("        ");
+        out.write("                ");
         if (_jspx_meth_c_when_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
         out.write("\n");
-        out.write("        ");
+        out.write("                ");
         if (_jspx_meth_c_when_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
         out.write("\n");
-        out.write("        ");
+        out.write("                ");
         if (_jspx_meth_c_when_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
         out.write("\n");
-        out.write("        ");
+        out.write("                ");
         if (_jspx_meth_c_when_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
         out.write("\n");
-        out.write("        ");
+        out.write("                ");
         if (_jspx_meth_c_when_4((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
         out.write("\n");
-        out.write("    ");
+        out.write("            ");
         int evalDoAfterBody = _jspx_th_c_choose_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -260,13 +265,13 @@ public final class FRMListarRealizas_jsp extends org.apache.jasper.runtime.HttpJ
     if (_jspx_eval_c_when_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("            <div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">\n");
-        out.write("                Realização excluída com sucesso!\n");
-        out.write("                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n");
-        out.write("                    <span aria-hidden=\"true\">&times;</span>\n");
-        out.write("                </button>\n");
-        out.write("            </div>\n");
-        out.write("        ");
+        out.write("                    <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">\n");
+        out.write("                        Realização excluída com sucesso!\n");
+        out.write("                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n");
+        out.write("                            <span aria-hidden=\"true\">&times;</span>\n");
+        out.write("                        </button>\n");
+        out.write("                    </div>\n");
+        out.write("                ");
         int evalDoAfterBody = _jspx_th_c_when_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -288,18 +293,18 @@ public final class FRMListarRealizas_jsp extends org.apache.jasper.runtime.HttpJ
     org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_1 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
     _jspx_th_c_when_1.setPageContext(_jspx_page_context);
     _jspx_th_c_when_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
-    _jspx_th_c_when_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.message == 'deleteError'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    _jspx_th_c_when_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.message == 'updateSuccess'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_when_1 = _jspx_th_c_when_1.doStartTag();
     if (_jspx_eval_c_when_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("            <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">\n");
-        out.write("                Erro ao excluir a realização.\n");
-        out.write("                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n");
-        out.write("                    <span aria-hidden=\"true\">&times;</span>\n");
-        out.write("                </button>\n");
-        out.write("            </div>\n");
-        out.write("        ");
+        out.write("                    <div class=\"alert alert-info alert-dismissible fade show\" role=\"alert\">\n");
+        out.write("                        Realização actualizada com sucesso!\n");
+        out.write("                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n");
+        out.write("                            <span aria-hidden=\"true\">&times;</span>\n");
+        out.write("                        </button>\n");
+        out.write("                    </div>\n");
+        out.write("                ");
         int evalDoAfterBody = _jspx_th_c_when_1.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -326,13 +331,13 @@ public final class FRMListarRealizas_jsp extends org.apache.jasper.runtime.HttpJ
     if (_jspx_eval_c_when_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("            <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">\n");
-        out.write("                Formato de ID inválido.\n");
-        out.write("                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n");
-        out.write("                    <span aria-hidden=\"true\">&times;</span>\n");
-        out.write("                </button>\n");
-        out.write("            </div>\n");
-        out.write("        ");
+        out.write("                    <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">\n");
+        out.write("                        Formato de ID inválido.\n");
+        out.write("                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n");
+        out.write("                            <span aria-hidden=\"true\">&times;</span>\n");
+        out.write("                        </button>\n");
+        out.write("                    </div>\n");
+        out.write("                ");
         int evalDoAfterBody = _jspx_th_c_when_2.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -359,13 +364,13 @@ public final class FRMListarRealizas_jsp extends org.apache.jasper.runtime.HttpJ
     if (_jspx_eval_c_when_3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("            <div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">\n");
-        out.write("                Realização de avaliação cadastrada com sucesso.\n");
-        out.write("                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n");
-        out.write("                    <span aria-hidden=\"true\">&times;</span>\n");
-        out.write("                </button>\n");
-        out.write("            </div>\n");
-        out.write("        ");
+        out.write("                    <div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">\n");
+        out.write("                        Realização de avaliação cadastrada com sucesso.\n");
+        out.write("                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n");
+        out.write("                            <span aria-hidden=\"true\">&times;</span>\n");
+        out.write("                        </button>\n");
+        out.write("                    </div>\n");
+        out.write("                ");
         int evalDoAfterBody = _jspx_th_c_when_3.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -392,13 +397,13 @@ public final class FRMListarRealizas_jsp extends org.apache.jasper.runtime.HttpJ
     if (_jspx_eval_c_when_4 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("            <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">\n");
-        out.write("                Erro ao cadastrar a realização.\n");
-        out.write("                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n");
-        out.write("                    <span aria-hidden=\"true\">&times;</span>\n");
-        out.write("                </button>\n");
-        out.write("            </div>\n");
-        out.write("        ");
+        out.write("                    <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">\n");
+        out.write("                        Erro ao cadastrar a realização.\n");
+        out.write("                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n");
+        out.write("                            <span aria-hidden=\"true\">&times;</span>\n");
+        out.write("                        </button>\n");
+        out.write("                    </div>\n");
+        out.write("                ");
         int evalDoAfterBody = _jspx_th_c_when_4.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
