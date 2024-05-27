@@ -363,7 +363,7 @@ public class EstudanteServlet extends HttpServlet {
         document.add(assinadoPor);
 
         // Adiciona uma linha para assinatura
-        Paragraph linhaAssinatura = new Paragraph("__________________________________\nEleuterio Zacarias Mabecuane\n", signatureFont);
+        Paragraph linhaAssinatura = new Paragraph("__________________________________\n", signatureFont);
         linhaAssinatura.setAlignment(Element.ALIGN_CENTER);
         document.add(linhaAssinatura);
 

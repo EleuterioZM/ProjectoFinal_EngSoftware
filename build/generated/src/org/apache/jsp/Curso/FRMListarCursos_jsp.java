@@ -95,9 +95,10 @@ public final class FRMListarCursos_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\n");
       out.write("            <div class=\"text-right mb-4\">\n");
       out.write("                \n");
-      out.write("                <a href=\"");
+      out.write("            <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/CursoServlet?action=report\" class=\"btn btn-info\">Gerar Relatório</a>\n");
+      out.write("/CursoServlet?action=generateReport\" class=\"btn btn-info\">Gerar Relatório</a>\n");
+      out.write("\n");
       out.write("\n");
       out.write("                <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
