@@ -66,6 +66,8 @@
             <h1 class="mt-4" style="color:white">Listagem de Turmas</h1>
 
             <div class="text-right mb-4">
+                <a href="${pageContext.request.contextPath}/TurmaServlet?action=report" class="btn btn-info" download>Gerar Relatório</a>
+
                 <a href="${pageContext.request.contextPath}/Turma/FRMCadastroTurma.jsp" class="btn btn-success">Adicionar Turma</a>
             </div>
 
