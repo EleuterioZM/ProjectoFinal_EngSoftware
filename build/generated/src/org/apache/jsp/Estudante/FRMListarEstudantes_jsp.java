@@ -82,17 +82,20 @@ public final class FRMListarEstudantes_jsp extends org.apache.jasper.runtime.Htt
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <div class=\"container mt-4\">\n");
-      out.write("    ");
+      out.write("            ");
       out.write("\n");
-      out.write("    ");
+      out.write("            ");
       if (_jspx_meth_c_choose_0(_jspx_page_context))
         return;
       out.write("\n");
-      out.write("</div>\n");
+      out.write("        </div>\n");
       out.write("        <div class=\"container\">\n");
       out.write("            <h1 class=\"mt-4\" style=\"color:white\">Listagem de Estudantes</h1>\n");
       out.write("            <script src=\"../js/alertas.js\"></script>\n");
       out.write("            <div class=\"text-right mb-4\">\n");
+      out.write("                <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("/EstudanteServlet?action=report\" class=\"btn btn-info\">Gerar Relatório</a>\n");
       out.write("                <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("/Estudante/FRMCadastroEstudantes.jsp\" class=\"btn btn-success\">Adicionar Estudante</a>\n");
@@ -104,7 +107,7 @@ public final class FRMListarEstudantes_jsp extends org.apache.jasper.runtime.Htt
       out.write("                        <th scope=\"col\">Número de Matrícula</th>\n");
       out.write("                        <th scope=\"col\">Nome</th>\n");
       out.write("                        <th scope=\"col\">Apelido</th>\n");
-      out.write("                      \n");
+      out.write("\n");
       out.write("                        <th scope=\"col\">Turma</th>\n");
       out.write("                        <th scope=\"col\">Ações</th>\n");
       out.write("                    </tr>\n");
@@ -145,7 +148,7 @@ public final class FRMListarEstudantes_jsp extends org.apache.jasper.runtime.Htt
       out.write("                        <td>\n");
       out.write("                            ");
       out.write("\n");
-      out.write("    <a href=\"");
+      out.write("                            <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("/EstudanteServlet?action=view&nrMatricula=");
       out.print( estudante.getNrMatricula());
@@ -213,21 +216,31 @@ public final class FRMListarEstudantes_jsp extends org.apache.jasper.runtime.Htt
       out.write("        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"></script>\n");
       out.write("\n");
       out.write("        <script>\n");
-      out.write("                                \n");
-      out.write("function visualizarEstudante(nrMatricula) {\n");
-      out.write("    window.location.href = \"");
+      out.write("\n");
+      out.write("                                function visualizarEstudante(nrMatricula) {\n");
+      out.write("                                    window.location.href = \"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("/EstudanteServlet?action=view&nrMatricula=\" + nrMatricula;\n");
-      out.write("}\n");
+      out.write("                                }\n");
       out.write("\n");
       out.write("                                function editarEstudante(nrMatricula) {\n");
       out.write("                                    window.location.href = \"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("/EstudanteServlet?action=edit&nrMatricula=\" + nrMatricula;\n");
       out.write("                                }\n");
-      out.write("                     \n");
-      out.write("        </script>\n");
       out.write("\n");
+      out.write("        </script>\n");
+      out.write("        <script>\n");
+      out.write("            // Esconder alertas após 5 segundos\n");
+      out.write("            $(document).ready(function () {\n");
+      out.write("                $(\".alert\").each(function (index, element) {\n");
+      out.write("                    var alert = $(element);\n");
+      out.write("                    setTimeout(function () {\n");
+      out.write("                        alert.alert('close');\n");
+      out.write("                    }, 5000);\n");
+      out.write("                });\n");
+      out.write("            });\n");
+      out.write("        </script>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
@@ -255,21 +268,21 @@ public final class FRMListarEstudantes_jsp extends org.apache.jasper.runtime.Htt
     if (_jspx_eval_c_choose_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("        ");
+        out.write("                ");
         if (_jspx_meth_c_when_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
         out.write("\n");
-        out.write("        ");
+        out.write("                ");
         if (_jspx_meth_c_when_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
         out.write("\n");
-        out.write("      \n");
-        out.write("        ");
+        out.write("\n");
+        out.write("                ");
         if (_jspx_meth_c_when_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
         out.write("\n");
-        out.write("        \n");
-        out.write("    ");
+        out.write("\n");
+        out.write("            ");
         int evalDoAfterBody = _jspx_th_c_choose_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -296,13 +309,13 @@ public final class FRMListarEstudantes_jsp extends org.apache.jasper.runtime.Htt
     if (_jspx_eval_c_when_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("            <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">\n");
-        out.write("                Estudante excluído com sucesso!\n");
-        out.write("                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n");
-        out.write("                    <span aria-hidden=\"true\">&times;</span>\n");
-        out.write("                </button>\n");
-        out.write("            </div>\n");
-        out.write("        ");
+        out.write("                    <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">\n");
+        out.write("                        Estudante excluído com sucesso!\n");
+        out.write("                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n");
+        out.write("                            <span aria-hidden=\"true\">&times;</span>\n");
+        out.write("                        </button>\n");
+        out.write("                    </div>\n");
+        out.write("                ");
         int evalDoAfterBody = _jspx_th_c_when_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -329,13 +342,13 @@ public final class FRMListarEstudantes_jsp extends org.apache.jasper.runtime.Htt
     if (_jspx_eval_c_when_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("            <div class=\"alert alert-info alert-dismissible fade show\" role=\"alert\">\n");
-        out.write("              Estudante actualizado com sucesso!\n");
-        out.write("                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n");
-        out.write("                    <span aria-hidden=\"true\">&times;</span>\n");
-        out.write("                </button>\n");
-        out.write("            </div>\n");
-        out.write("        ");
+        out.write("                    <div class=\"alert alert-info alert-dismissible fade show\" role=\"alert\">\n");
+        out.write("                        Estudante actualizado com sucesso!\n");
+        out.write("                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n");
+        out.write("                            <span aria-hidden=\"true\">&times;</span>\n");
+        out.write("                        </button>\n");
+        out.write("                    </div>\n");
+        out.write("                ");
         int evalDoAfterBody = _jspx_th_c_when_1.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -362,13 +375,13 @@ public final class FRMListarEstudantes_jsp extends org.apache.jasper.runtime.Htt
     if (_jspx_eval_c_when_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("            <div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">\n");
-        out.write("                Estudante  cadastrado com sucesso.\n");
-        out.write("                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n");
-        out.write("                    <span aria-hidden=\"true\">&times;</span>\n");
-        out.write("                </button>\n");
-        out.write("            </div>\n");
-        out.write("        ");
+        out.write("                    <div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">\n");
+        out.write("                        Estudante  cadastrado com sucesso.\n");
+        out.write("                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n");
+        out.write("                            <span aria-hidden=\"true\">&times;</span>\n");
+        out.write("                        </button>\n");
+        out.write("                    </div>\n");
+        out.write("                ");
         int evalDoAfterBody = _jspx_th_c_when_2.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;

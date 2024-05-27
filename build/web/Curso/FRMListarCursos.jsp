@@ -58,6 +58,9 @@
 
 
             <div class="text-right mb-4">
+                
+                <a href="${pageContext.request.contextPath}/CursoServlet?action=report" class="btn btn-info">Gerar Relatório</a>
+
                 <a href="${pageContext.request.contextPath}/Curso/FRMCadastroCurso.jsp" class="btn btn-success">Adicionar Curso</a>
             </div>
 

@@ -57,6 +57,7 @@
             <h1 class="mt-4" style="color:white">Listagem de Estudantes</h1>
             <script src="../js/alertas.js"></script>
             <div class="text-right mb-4">
+                <a href="${pageContext.request.contextPath}/EstudanteServlet?action=report" class="btn btn-info">Gerar Relatório</a>
                 <a href="${pageContext.request.contextPath}/Estudante/FRMCadastroEstudantes.jsp" class="btn btn-success">Adicionar Estudante</a>
             </div>
             <table class="table table-striped mt-4 table-dark">
