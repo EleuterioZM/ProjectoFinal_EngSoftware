@@ -2,9 +2,22 @@ package Controller;
 
 import DAO.DisciplinaDAO;
 import Model.Disciplina;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -45,6 +58,9 @@ public class DisciplinaServlet extends HttpServlet {
                 case "update":
                     updateDisciplina(request, response);
                     break;
+                         case "report":
+                generateDisciplinaReport(request, response);
+                break;
                 default:
                     listDisciplinas(request, response);
                     break;
@@ -202,4 +218,100 @@ private void visualizarDisciplina(HttpServletRequest request, HttpServletRespons
        // listDisciplinas(request, response);
            request.getRequestDispatcher("/Disciplina/FRMListarDisciplinas.jsp?message=updateSuccess").forward(request, response);
     }
+    private void generateDisciplinaReport(HttpServletRequest request, HttpServletResponse response) {
+        Document document = new Document();
+
+    try {
+        // Diretório onde o PDF será temporariamente armazenado (pasta "temp" do servidor)
+        String tempDir = System.getProperty("java.io.tmpdir");
+        String filePath = tempDir + File.separator + "relatorio_disciplinas.pdf";
+
+        // Cria um novo arquivo PDF
+        PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(filePath));
+
+        // Abre o documento
+        document.open();
+
+        // Adiciona título ao documento
+        Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 18, BaseColor.BLACK);
+        Paragraph titulo = new Paragraph("Relatório de Disciplinas", titleFont);
+        titulo.setAlignment(Element.ALIGN_CENTER);
+        titulo.setSpacingAfter(20);
+        document.add(titulo);
+
+        // Cria uma tabela com 4 colunas
+        PdfPTable tabela = new PdfPTable(4);
+        tabela.setWidthPercentage(100);
+        tabela.setSpacingBefore(10f);
+        tabela.setSpacingAfter(10f);
+
+        // Define as larguras das colunas
+        float[] columnWidths = {2f, 3f, 2f, 2f};
+        tabela.setWidths(columnWidths);
+
+        // Adiciona cabeçalhos à tabela
+        Font headerFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.WHITE);
+         BaseColor headerColor = new BaseColor(0, 102, 204);
+        String[] headers = {"ID", "Nome", "CHS", "Crédito"};
+        for (String header : headers) {
+            PdfPCell headerCell = new PdfPCell(new Paragraph(header, headerFont));
+            
+            
+             headerCell.setBackgroundColor(headerColor);
+            headerCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            headerCell.setPadding(10);
+            tabela.addCell(headerCell);
+        }
+
+        // Recupera os dados da base de dados
+        List<Disciplina> listaDisciplinas = disciplinaDAO.listarDisciplinas();
+        Font cellFont = FontFactory.getFont(FontFactory.HELVETICA, 10, BaseColor.BLACK);
+
+        // Adiciona os dados à tabela
+        for (Disciplina disciplina : listaDisciplinas) {
+            tabela.addCell(new PdfPCell(new Paragraph(String.valueOf(disciplina.getId()), cellFont)));
+            tabela.addCell(new PdfPCell(new Paragraph(disciplina.getNome(), cellFont)));
+            tabela.addCell(new PdfPCell(new Paragraph(String.valueOf(disciplina.getChs()), cellFont)));
+            tabela.addCell(new PdfPCell(new Paragraph(String.valueOf(disciplina.getCredito()), cellFont)));
+        }
+
+        // Adiciona a tabela ao documento
+        document.add(tabela);
+
+        // Adiciona assinatura ao documento
+        Font signatureFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.BLACK);
+        Paragraph assinadoPor = new Paragraph("Assinado por", signatureFont);
+        assinadoPor.setAlignment(Element.ALIGN_CENTER);
+        assinadoPor.setSpacingBefore(20);
+        document.add(assinadoPor);
+
+        // Adiciona uma linha para assinatura
+        Paragraph linhaAssinatura = new Paragraph("__________________________________\n", signatureFont);
+        linhaAssinatura.setAlignment(Element.ALIGN_CENTER);
+        document.add(linhaAssinatura);
+
+        // Fecha o documento
+        document.close();
+
+        // Informa ao navegador que o arquivo PDF será baixado
+        response.setContentType("application/pdf");
+        response.setHeader("Content-Disposition", "attachment; filename=relatorio_disciplinas.pdf");
+
+        // Escreve o conteúdo do arquivo PDF no fluxo de saída da resposta
+        ServletOutputStream out = response.getOutputStream();
+        FileInputStream fis = new FileInputStream(new File(filePath));
+        byte[] buffer = new byte[4096];
+        int bytesRead;
+        while ((bytesRead = fis.read(buffer)) != -1) {
+            out.write(buffer, 0, bytesRead);
+        }
+
+        // Fecha os fluxos de entrada e saída
+        fis.close();
+        out.flush();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
 }
