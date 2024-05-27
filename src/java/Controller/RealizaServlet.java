@@ -356,10 +356,11 @@ private void generateReport(HttpServletRequest request, HttpServletResponse resp
 
         // Adiciona cabeçalhos à tabela
         Font headerFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.WHITE);
+        BaseColor headerColor = new BaseColor(0, 102, 204);
         String[] headers = {"ID Avaliação", "ID Estudante", "Nota"};
         for (String header : headers) {
             PdfPCell headerCell = new PdfPCell(new Paragraph(header, headerFont));
-            headerCell.setBackgroundColor(BaseColor.DARK_GRAY);
+           headerCell.setBackgroundColor(headerColor);
             headerCell.setHorizontalAlignment(Element.ALIGN_CENTER);
             headerCell.setPadding(10);
             tabela.addCell(headerCell);
@@ -391,7 +392,7 @@ private void generateReport(HttpServletRequest request, HttpServletResponse resp
         document.add(assinadoPor);
 
         // Adiciona uma linha para assinatura
-        Paragraph linhaAssinatura = new Paragraph("__________________________________\nNome do Assinante\n", signatureFont);
+        Paragraph linhaAssinatura = new Paragraph("__________________________________\n", signatureFont);
         linhaAssinatura.setAlignment(Element.ALIGN_CENTER);
         document.add(linhaAssinatura);
 
