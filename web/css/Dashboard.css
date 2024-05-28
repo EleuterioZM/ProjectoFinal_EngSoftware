@@ -85,7 +85,7 @@ body{
   background: #2F323A;
   position: fixed;
   top: 70px;
-  width: 240px;
+  width: 250px;
   height: 100%;
   transition: 0.3s;
   transition-property: width;
@@ -178,7 +178,7 @@ body{
   margin-top: 70px;
   margin-left: 250px;
   padding: 15px;
-  background: url(background.jpg)no-repeat;
+  background: url(../img/woman.jpg)no-repeat;
   background-size: cover;
   height: 100vh;
   transition: 0.3s;

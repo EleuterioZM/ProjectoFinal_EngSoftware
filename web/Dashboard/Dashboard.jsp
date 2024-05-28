@@ -96,6 +96,9 @@
                 </div>
             </div>
             <!--sidebar end-->
+            <div class="main-container">
+          
+        </div>
         </div>
     </div>
     <script type="text/javascript">
