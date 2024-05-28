@@ -3,6 +3,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,14 +14,21 @@
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <!-- Adicione aqui os links para os arquivos CSS de ícones, como Font Awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../includes/bootstrap.css" />
+        <link href="../includes/style.css" rel="stylesheet" />
+         <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
         <style>
             body {
                 background-color: #ff9966; /* Cor de fundo */
             }
+            
         </style>
 
     </head>
     <body>
+   
+         <%@ include file="../includes/menu.jsp" %>
+       
         <div class="container mt-4">
             <%-- Exibir mensagens de sucesso ou erro --%>
             <c:choose>
@@ -71,7 +79,7 @@
                 </thead>
                 <tbody>
                     <%
-                        int pageSizeDisciplina = 6;
+                        int pageSizeDisciplina = 5;
                         int currentPageDisciplina = (request.getParameter("pageDisciplina") != null) ? Integer.parseInt(request.getParameter("pageDisciplina")) : 1;
                         DisciplinaDAO disciplinaDAO = new DisciplinaDAO();
                         List<Disciplina> listaDisciplinas = disciplinaDAO.listarDisciplinas();
@@ -136,5 +144,8 @@
                 });
             });
         </script>
+        <script src="../includes/jquery.js"></script>
+ 
+        <script src="../includes/custom.js"></script>
     </body>
 </html>

@@ -12,7 +12,11 @@
         <!-- Adicione aqui os links para os arquivos CSS do Bootstrap -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <!-- Adicione aqui os links para os arquivos CSS de ícones, como Font Awesome -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+              <link rel="stylesheet" type="text/css" href="../includes/bootstrap.css" />
+        <link href="../includes/style.css" rel="stylesheet" />
+         <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    
         <style>
             body {
                 background-color: #ff9966; /* Cor de fundo */
@@ -21,6 +25,7 @@
 
     </head>
     <body>
+          <%@ include file="../includes/menu.jsp" %>
 
         <div class="container mt-4">
             <%-- Exibir mensagens de sucesso ou erro --%>
@@ -73,7 +78,7 @@
                 </thead>
                 <tbody>
                     <%
-                        int pageSizeAvaliacao = 6;
+                        int pageSizeAvaliacao = 5;
                         int currentPageAvaliacao = (request.getParameter("pageAvaliacao") != null) ? Integer.parseInt(request.getParameter("pageAvaliacao")) : 1;
                         AvaliacaoDAO avaliacaoDAO = new AvaliacaoDAO();
                         List<Avaliacao> listaAvaliacoes = avaliacaoDAO.listarAvaliacoes();
@@ -138,5 +143,8 @@
                 });
             });
         </script>
+          <script src="../includes/jquery.js"></script>
+ 
+        <script src="../includes/custom.js"></script>
     </body>
 </html>

@@ -22,6 +22,7 @@
 
     </head>
     <body>
+          <%@ include file="../includes/menu.jsp" %>
         <div class="container mt-4">
             <%-- Exibir mensagens de sucesso ou erro --%>
             <c:choose>
@@ -128,6 +129,8 @@
             });
         </script>
 
-
+  <script src="../includes/jquery.js"></script>
+ 
+        <script src="../includes/custom.js"></script>
     </body>
 </html>

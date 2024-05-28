@@ -25,26 +25,27 @@
             <div class="sidebar">
                 <div class="sidebar-menu">
                     <center class="profile">
-                        <img src="../img/OJZ2J70.jpg" alt="">
+                        <img src="../img/books.jpg" alt="">
                         <p>Gestão de estudantes</p>
                     </center>
-                    <li class="item">
-                        <a href="#" class="menu-btn">
-                            <i class="fas fa-home"></i><span>Página Inicial</span>
-                        </a>
-                    </li>
-                    <li class="item">
+                     <li class="item">
                         <a href="#" class="menu-btn">
                             <i class="fas fa-desktop"></i><span>Dashboard</span>
                         </a>
                     </li>
+                    <li class="item">
+                        <a href="../Home_Page/Home.jsp" class="menu-btn">
+                            <i class="fas fa-home"></i><span>Página Inicial</span>
+                        </a>
+                    </li>
+                   
                     <li class="item" id="avaliacao">
-                        <a href="#avaliacao" class="menu-btn">
+                        <a href="" class="menu-btn">
                             <i class="fas fa-star"></i><span>Avaliação <i class="fas fa-chevron-down drop-down"></i></span>
                         </a>
                         <div class="sub-menu">
-                            <a href="#"><i class="fas fa-plus"></i><span>Adicionar Avaliação</span></a>
-                            <a href="#"><i class="fas fa-eye"></i><span>Visualizar Avaliações</span></a>
+                            <a href="../Avaliacao/FRMCadastroAvaliacao.jsp"><i class="fas fa-plus"></i><span>Adicionar Avaliação</span></a>
+                            <a href="../Avaliacao/FRMListarAvaliacoes.jsp"><i class="fas fa-eye"></i><span>Visualizar Avaliações</span></a>
                         </div>
                     </li>
                     <li class="item" id="curso">
@@ -52,8 +53,8 @@
                             <i class="fas fa-book"></i><span>Curso <i class="fas fa-chevron-down drop-down"></i></span>
                         </a>
                         <div class="sub-menu">
-                            <a href="#"><i class="fas fa-plus"></i><span>Adicionar Curso</span></a>
-                            <a href="#"><i class="fas fa-eye"></i><span>Visualizar Cursos</span></a>
+                            <a href="../Curso/FRMCadastroCurso.jsp"><i class="fas fa-plus"></i><span>Adicionar Curso</span></a>
+                            <a href="../Curso/FRMListarCursos.jsp"><i class="fas fa-eye"></i><span>Visualizar Cursos</span></a>
                         </div>
                     </li>
                     <li class="item" id="turma">
@@ -61,8 +62,8 @@
                             <i class="fas fa-users"></i><span>Turma <i class="fas fa-chevron-down drop-down"></i></span>
                         </a>
                         <div class="sub-menu">
-                            <a href="#"><i class="fas fa-plus"></i><span>Adicionar Turma</span></a>
-                            <a href="#"><i class="fas fa-eye"></i><span>Visualizar Turmas</span></a>
+                            <a href="../Turma/FRMCadastroTurma.jsp"><i class="fas fa-plus"></i><span>Adicionar Turma</span></a>
+                            <a href="../Turma/FRMListarTurmas.jsp"><i class="fas fa-eye"></i><span>Visualizar Turmas</span></a>
                         </div>
                     </li>
                     <li class="item" id="estudante">
@@ -70,8 +71,8 @@
                             <i class="fas fa-user-graduate"></i><span>Estudante <i class="fas fa-chevron-down drop-down"></i></span>
                         </a>
                         <div class="sub-menu">
-                            <a href="#"><i class="fas fa-plus"></i><span>Adicionar Estudante</span></a>
-                            <a href="#"><i class="fas fa-eye"></i><span>Visualizar Estudantes</span></a>
+                            <a href="../Estudante/FRMCadastroEstudantes.jsp"><i class="fas fa-plus"></i><span>Adicionar Estudante</span></a>
+                            <a href="../Estudante/FRMListarEstudantes.jsp"><i class="fas fa-eye"></i><span>Visualizar Estudantes</span></a>
                         </div>
                     </li>
                     <li class="item" id="disciplina">
@@ -79,8 +80,8 @@
                             <i class="fas fa-book-reader"></i><span>Disciplina <i class="fas fa-chevron-down drop-down"></i></span>
                         </a>
                         <div class="sub-menu">
-                            <a href="#"><i class="fas fa-plus"></i><span>Adicionar Disciplina</span></a>
-                                                     <a href="#"><i class="fas fa-eye"></i><span>Visualizar Disciplinas</span></a>
+                            <a href="../Disciplina/FRMCadastroDisciplina.jsp"><i class="fas fa-plus"></i><span>Adicionar Disciplina</span></a>
+                            <a href="../Disciplina/FRMListarDisciplinas.jsp"><i class="fas fa-eye"></i><span>Visualizar Disciplinas</span></a>
                         </div>
                     </li>
                     <li class="item" id="nota">
@@ -88,8 +89,8 @@
                             <i class="fas fa-graduation-cap"></i><span>Nota <i class="fas fa-chevron-down drop-down"></i></span>
                         </a>
                         <div class="sub-menu">
-                            <a href="#"><i class="fas fa-plus"></i><span>Adicionar Nota</span></a>
-                            <a href="#"><i class="fas fa-eye"></i><span>Visualizar Notas</span></a>
+                            <a href="../NotaRealiza/FRMRealizaCadastrar.jsp"><i class="fas fa-plus"></i><span>Adicionar Nota</span></a>
+                            <a href="../NotaRealiza/FRMListarRealizas.jsp"><i class="fas fa-eye"></i><span>Visualizar Notas</span></a>
                         </div>
                     </li>
                 </div>

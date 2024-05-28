@@ -22,6 +22,7 @@
 
     </head>
     <body>
+          <%@ include file="../includes/menu.jsp" %>
         <div class="container mt-4">
             <%-- Exibir mensagens de sucesso ou erro --%>
             <c:choose>
@@ -74,7 +75,7 @@
                 </thead>
                 <tbody>
                     <%
-                        int pageSize = 6;
+                        int pageSize = 5;
                         int currentPage = (request.getParameter("page") != null) ? Integer.parseInt(request.getParameter("page")) : 1;
                         EstudanteDAO estudanteDAO = new EstudanteDAO();
                         List<Estudante> listaEstudantes = estudanteDAO.listarEstudantesComTurma();
@@ -152,5 +153,8 @@
                 });
             });
         </script>
+          <script src="../includes/jquery.js"></script>
+ 
+        <script src="../includes/custom.js"></script>
     </body>
 </html>

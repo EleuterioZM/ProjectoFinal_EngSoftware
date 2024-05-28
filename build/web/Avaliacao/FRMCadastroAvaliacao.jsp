@@ -6,7 +6,7 @@
  
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div class="sidebar">
-        <%@ include file="../Dashboard/Dashboard.jsp" %>
+  
     </div>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,24 +15,9 @@
         <title>Cadastrar Avaliação</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
         <link rel="stylesheet" href="../css/Estudantes.css">
-   <style>
-        
-        .sidebar {
-           
-         
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            overflow-y: auto;
-        }
-        .content {
-            flex: 1;
-            margin-left: 140px; /* Largura do dashboard */
-            padding-top: 70px; /* Espaçamento do topo */
-        }
-    </style>
+  
     </head>
+   
     <body>
 
         <div class="container">

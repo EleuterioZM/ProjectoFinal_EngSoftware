@@ -14,6 +14,11 @@ public final class FRMListarAvaliacoes_jsp extends org.apache.jasper.runtime.Htt
 
   private static java.util.List<String> _jspx_dependants;
 
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(1);
+    _jspx_dependants.add("/Avaliacao/../includes/menu.jsp");
+  }
+
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_choose;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_when_test;
 
@@ -71,7 +76,11 @@ public final class FRMListarAvaliacoes_jsp extends org.apache.jasper.runtime.Htt
       out.write("        <!-- Adicione aqui os links para os arquivos CSS do Bootstrap -->\n");
       out.write("        <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" rel=\"stylesheet\">\n");
       out.write("        <!-- Adicione aqui os links para os arquivos CSS de ícones, como Font Awesome -->\n");
-      out.write("        <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css\" rel=\"stylesheet\">\n");
+      out.write("            <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css\" rel=\"stylesheet\">\n");
+      out.write("              <link rel=\"stylesheet\" type=\"text/css\" href=\"../includes/bootstrap.css\" />\n");
+      out.write("        <link href=\"../includes/style.css\" rel=\"stylesheet\" />\n");
+      out.write("         <link href=\"https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap\" rel=\"stylesheet\">\n");
+      out.write("    \n");
       out.write("        <style>\n");
       out.write("            body {\n");
       out.write("                background-color: #ff9966; /* Cor de fundo */\n");
@@ -80,6 +89,73 @@ public final class FRMListarAvaliacoes_jsp extends org.apache.jasper.runtime.Htt
       out.write("\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
+      out.write("          ");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("    <!-- header section strats -->\n");
+      out.write("    <header class=\"header_section\">\n");
+      out.write("      <div class=\"container-fluid\">\n");
+      out.write("        <nav class=\"navbar navbar-expand-lg custom_nav-container\">\n");
+      out.write("          <a class=\"navbar-brand\" href=\"index.html\">\n");
+      out.write("           \n");
+      out.write("          </a>\n");
+      out.write("          <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n");
+      out.write("            <span class=\"navbar-toggler-icon\"></span>\n");
+      out.write("          </button>\n");
+      out.write("\n");
+      out.write("          <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n");
+      out.write("            <ul class=\"navbar-nav  \">\n");
+      out.write("              <li class=\"nav-item active\">\n");
+      out.write("                <a class=\"nav-link\" href=\"index.html\">Página Inicial <span class=\"sr-only\">(current)</span></a>\n");
+      out.write("              </li>\n");
+      out.write("              <li class=\"nav-item\">\n");
+      out.write("                <a class=\"nav-link\" href=\"cursos.html\"> Cursos</a>\n");
+      out.write("              </li>\n");
+      out.write("              <li class=\"nav-item\">\n");
+      out.write("                <a class=\"nav-link\" href=\"alunos.html\">Alunos </a>\n");
+      out.write("              </li>\n");
+      out.write("              <li class=\"nav-item\">\n");
+      out.write("                <a class=\"nav-link\" href=\"matriculas.html\"> Matrículas </a>\n");
+      out.write("              </li>\n");
+      out.write("            </ul>\n");
+      out.write("            <div class=\"user_option\">\n");
+      out.write("              <a href=\"\">\n");
+      out.write("                <span>\n");
+      out.write("                  Login\n");
+      out.write("                </span>\n");
+      out.write("              </a>\n");
+      out.write("              <form class=\"form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0\">\n");
+      out.write("                <button class=\"btn  my-2 my-sm-0 nav_search-btn\" type=\"submit\"></button>\n");
+      out.write("              </form>\n");
+      out.write("            </div>\n");
+      out.write("          </div>\n");
+      out.write("          <div>\n");
+      out.write("            <div class=\"custom_menu-btn \">\n");
+      out.write("              <button>\n");
+      out.write("                <span class=\" s-1\">\n");
+      out.write("\n");
+      out.write("                </span>\n");
+      out.write("                <span class=\"s-2\">\n");
+      out.write("\n");
+      out.write("                </span>\n");
+      out.write("                <span class=\"s-3\">\n");
+      out.write("\n");
+      out.write("                </span>\n");
+      out.write("              </button>\n");
+      out.write("            </div>\n");
+      out.write("          </div>\n");
+      out.write("\n");
+      out.write("        </nav>\n");
+      out.write("      </div>\n");
+      out.write("    </header>\n");
+      out.write("   \n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
       out.write("\n");
       out.write("        <div class=\"container mt-4\">\n");
       out.write("            ");
@@ -114,7 +190,7 @@ public final class FRMListarAvaliacoes_jsp extends org.apache.jasper.runtime.Htt
       out.write("                <tbody>\n");
       out.write("                    ");
 
-                        int pageSizeAvaliacao = 6;
+                        int pageSizeAvaliacao = 5;
                         int currentPageAvaliacao = (request.getParameter("pageAvaliacao") != null) ? Integer.parseInt(request.getParameter("pageAvaliacao")) : 1;
                         AvaliacaoDAO avaliacaoDAO = new AvaliacaoDAO();
                         List<Avaliacao> listaAvaliacoes = avaliacaoDAO.listarAvaliacoes();
@@ -221,6 +297,9 @@ public final class FRMListarAvaliacoes_jsp extends org.apache.jasper.runtime.Htt
       out.write("                });\n");
       out.write("            });\n");
       out.write("        </script>\n");
+      out.write("          <script src=\"../includes/jquery.js\"></script>\n");
+      out.write(" \n");
+      out.write("        <script src=\"../includes/custom.js\"></script>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
