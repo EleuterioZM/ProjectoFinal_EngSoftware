@@ -70,7 +70,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div class=\"container px-4 px-lg-5\">\n");
       out.write("                <a class=\"navbar-brand\" href=\"#page-top\"><i class=\"bi bi-people\"></i> Sistema de Gestão de Estudantes</a>\n");
       out.write("                <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-icon\"></span></button>\n");
-      out.write("                \n");
+      out.write("\n");
       out.write("            </div>\n");
       out.write("        </nav>\n");
       out.write("        <!-- Cabeçalho-->\n");
@@ -84,14 +84,14 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </div>\n");
       out.write("                    <div class=\"col-lg-8 align-self-baseline\">\n");
       out.write("                        <p class=\"text-white-75 mb-5\">O Sistema de Gestão de Estudantes pode ajudá-lo a gerenciar os alunos de forma eficaz! Basta integrá-lo e começar a gerenciar, sem complicações!</p>\n");
-      out.write("                        <a class=\"btn btn-primary btn-xl me-2\" href=\"#alunos\">Alunos</a>\n");
-      out.write("                        <a class=\"btn btn-success btn-xl\" href=\"#administradores\">Administradores</a>\n");
+      out.write("                        <a class=\"btn btn-primary btn-xl me-2\" href=\"../auth/FRMLogin.jsp\">Alunos</a>\n");
+      out.write("                        <a class=\"btn btn-success btn-xl\" href=\"../auth/FRMLogin.jsp?adminClicked=true\">Administradores</a>\n");
       out.write("                    </div>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("        </header>\n");
       out.write("        <!-- Sobre-->\n");
-      out.write("               <!-- JS do Bootstrap-->\n");
+      out.write("        <!-- JS do Bootstrap-->\n");
       out.write("        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js\"></script>\n");
       out.write("        <!-- JS do plugin SimpleLightbox-->\n");
       out.write("        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js\"></script>\n");
