@@ -84,8 +84,8 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </div>\n");
       out.write("                    <div class=\"col-lg-8 align-self-baseline\">\n");
       out.write("                        <p class=\"text-white-75 mb-5\">O Sistema de Gestão de Estudantes pode ajudá-lo a gerenciar os alunos de forma eficaz! Basta integrá-lo e começar a gerenciar, sem complicações!</p>\n");
-      out.write("                        <a class=\"btn btn-primary btn-xl me-2\" href=\"../auth/FRMLogin.jsp\">Alunos</a>\n");
-      out.write("                        <a class=\"btn btn-success btn-xl\" href=\"../auth/FRMLogin.jsp?adminClicked=true\">Administradores</a>\n");
+      out.write("                        <a class=\"btn btn-primary btn-xl me-2\" href=\"../Home_Page/PesquisarEstudante.jsp\">Alunos</a>\n");
+      out.write("                        <a class=\"btn btn-success btn-xl\" href=\"../Admin_dashbaord/dashboard-analytics.html\">Administradores</a>\n");
       out.write("                    </div>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");

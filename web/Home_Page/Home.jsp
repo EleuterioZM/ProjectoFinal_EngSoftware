@@ -45,8 +45,8 @@
                     </div>
                     <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 mb-5">O Sistema de Gestão de Estudantes pode ajudá-lo a gerenciar os alunos de forma eficaz! Basta integrá-lo e começar a gerenciar, sem complicações!</p>
-                        <a class="btn btn-primary btn-xl me-2" href="../auth/FRMLogin.jsp">Alunos</a>
-                        <a class="btn btn-success btn-xl" href="../Dashboard/Dashboard.jsp">Administradores</a>
+                        <a class="btn btn-primary btn-xl me-2" href="../Home_Page/PesquisarEstudante.jsp">Alunos</a>
+                        <a class="btn btn-success btn-xl" href="../Admin_dashbaord/dashboard-analytics.html">Administradores</a>
                     </div>
                 </div>
             </div>
