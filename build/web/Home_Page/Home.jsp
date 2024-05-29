@@ -19,17 +19,13 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Fontes do Google-->
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
         <!-- CSS do plugin SimpleLightbox-->
-        <!-- Adicione aqui os links para os arquivos CSS de ícones, como Font Awesome -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-             <link rel="stylesheet" type="text/css" href="../includes/bootstrap.css" />
-        <link href="../includes/style.css" rel="stylesheet" />
-         <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- CSS do tema principal (inclui o Bootstrap)-->
+        <link href="../css/Pagina_Inicial.css" rel="stylesheet" />
     </head>
     <body id="page-top">
-          <a href="index.jsp" style="position: fixed; top: 20px; left: 20px; z-index: 9999;">
-    <i class="fas fa-arrow-right" style="font-size: 24px; color: white;"></i>
-</a>
         <!-- Navegação-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -67,9 +63,5 @@
         <!-- * * Ative seu formulário em https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-          <script src="../includes/jquery.js"></script>
- 
-        <script src="../includes/custom.js"></script>
-  
     </body>
 </html>

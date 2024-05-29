@@ -65,9 +65,6 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <link href=\"../css/Pagina_Inicial.css\" rel=\"stylesheet\" />\n");
       out.write("    </head>\n");
       out.write("    <body id=\"page-top\">\n");
-      out.write("          <a href=\"index.jsp\" style=\"position: fixed; top: 20px; left: 20px; z-index: 9999;\">\n");
-      out.write("    <i class=\"fas fa-arrow-right\" style=\"font-size: 24px; color: white;\"></i>\n");
-      out.write("</a>\n");
       out.write("        <!-- Navegação-->\n");
       out.write("        <nav class=\"navbar navbar-expand-lg navbar-light fixed-top py-3\" id=\"mainNav\">\n");
       out.write("            <div class=\"container px-4 px-lg-5\">\n");

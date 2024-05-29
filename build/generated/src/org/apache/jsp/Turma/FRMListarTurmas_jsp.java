@@ -83,7 +83,7 @@ public final class FRMListarTurmas_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("    \n");
       out.write("        <style>\n");
       out.write("            body {\n");
-      out.write("                background-color: #ff9966; /* Cor de fundo */\n");
+      out.write("                background-color: rgb(147, 115, 82); /* Cor de fundo */\n");
       out.write("            }\n");
       out.write("        </style>\n");
       out.write("        <script src=\"../js/alertas.js\"></script>\n");
@@ -167,7 +167,7 @@ public final class FRMListarTurmas_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("%>\n");
+      out.write("\n");
       out.write("        <div class=\"container mt-4\">\n");
       out.write("            ");
       out.write("\n");
