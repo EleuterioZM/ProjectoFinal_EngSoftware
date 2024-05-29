@@ -5,7 +5,7 @@
 <%@page import="DAO.EstudanteDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div class="sidebar">
-        <%@ include file="../Dashboard/Dashboard.jsp" %>
+      
     </div>
 <!DOCTYPE html>
 <html lang="en">
