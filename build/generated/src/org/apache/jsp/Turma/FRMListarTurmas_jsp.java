@@ -202,7 +202,7 @@ public final class FRMListarTurmas_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                <tbody>\n");
       out.write("                    ");
 
-                        int pageSize = 6;
+                        int pageSize = 5;
                         int currentPage = (request.getParameter("page") != null) ? Integer.parseInt(request.getParameter("page")) : 1;
                         TurmaDAO turmaDAO = new TurmaDAO();
                         List<Turma> listaTurmas = turmaDAO.listarTurmas();

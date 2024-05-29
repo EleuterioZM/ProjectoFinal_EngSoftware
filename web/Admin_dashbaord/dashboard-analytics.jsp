@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-    <html lang="en">
+<html lang="en">
 
     <head>
         <meta charset="utf-8">
@@ -25,7 +25,7 @@
         <div class="wrapper">
             <!-- ========== Left Sidebar Start ========== -->
             <div class="leftside-menu">
-    
+
                 <!-- LOGO -->
                 <a href="index.html" class="logo text-center logo-light">
                     <span class="logo-lg">
@@ -45,7 +45,7 @@
                         <img src="assets/images/logo_sm_dark.png" alt="" height="16">
                     </span>
                 </a>
-    
+
                 <div class="h-100" id="leftside-menu-container" data-simplebar="">
 
                     <!--- Sidemenu -->
@@ -62,110 +62,112 @@
                             <div class="collapse" id="sidebarDashboards">
                                 <ul class="side-nav-second-level">
                                     <li>
-                                        <a href="dashboard-analytics.html">Analytics</a>
+                                        <a href="dashboard-analytics.jsp">Analytics</a>
                                     </li>
                                     <li>
-                                        <a href="dashboard-crm.html">CRM</a>
+                                        <a href="dashboard-crm.jsp">CRM</a>
                                     </li>
                                     <li>
-                                        <a href="dashboard-projects.html">Projects</a>
+                                        <a href="dashboard-projects.jsp">Projects</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                       <li class="side-nav-title side-nav-item mt-1">Estudantes</li>
-<li class="side-nav-title side-nav-item mt-1">Estudantes</li>
-
-<li class="side-nav-item">
-    <a data-bs-toggle="collapse" href="#sidebarStudentManagement" aria-expanded="false" aria-controls="sidebarStudentManagement" class="side-nav-link">
-        <i class="uil-graduation-hat"></i>
-        <span> Estudantes </span>
-        <span class="menu-arrow"></span>
-    </a>
-    <div class="collapse" id="sidebarStudentManagement">
-        <ul class="side-nav-second-level">
-            <li>
-                <a data-bs-toggle="collapse" href="#submenuTurma" aria-expanded="false" aria-controls="submenuTurma">Turma <span class="menu-arrow"></span></a>
-                <div class="collapse" id="submenuTurma">
-                    <ul class="side-nav-third-level">
-                        <li><a href="student-management-turma-listar.html">Listar Turmas</a></li>
-                        <li><a href="student-management-turma-cadastrar.html">Cadastrar Turma</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <a data-bs-toggle="collapse" href="#submenuAvaliacao" aria-expanded="false" aria-controls="submenuAvaliacao">Avaliação <span class="menu-arrow"></span></a>
-                <div class="collapse" id="submenuAvaliacao">
-                    <ul class="side-nav-third-level">
-                        <li><a href="student-management-avaliacao-listar.html">Listar Avaliações</a></li>
-                        <li><a href="student-management-avaliacao-cadastrar.html">Cadastrar Avaliação</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <a data-bs-toggle="collapse" href="#submenuDisciplina" aria-expanded="false" aria-controls="submenuDisciplina">Disciplina <span class="menu-arrow"></span></a>
-                <div class="collapse" id="submenuDisciplina">
-                    <ul class="side-nav-third-level">
-                        <li><a href="student-management-disciplina-listar.html">Listar Disciplinas</a></li>
-                        <li><a href="student-management-disciplina-cadastrar.html">Cadastrar Disciplina</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <a data-bs-toggle="collapse" href="#submenuRealizacoes" aria-expanded="false" aria-controls="submenuRealizacoes">Realizações <span class="menu-arrow"></span></a>
-                <div class="collapse" id="submenuRealizacoes">
-                    <ul class="side-nav-third-level">
-                        <li><a href="student-management-realizacoes-listar.html">Listar Realizações</a></li>
-                        <li><a href="student-management-realizacoes-cadastrar.html">Cadastrar Realização</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <a data-bs-toggle="collapse" href="#submenuCurso" aria-expanded="false" aria-controls="submenuCurso">Curso <span class="menu-arrow"></span></a>
-                <div class="collapse" id="submenuCurso">
-                    <ul class="side-nav-third-level">
-                        <li><a href="student-management-curso-listar.html">Listar Cursos</a></li>
-                        <li><a href="student-management-curso-cadastrar.html">Cadastrar Curso</a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-    </div>
-</li>
-<!-- Menu de Relatórios -->
-<li class="side-nav-title side-nav-item mt-1">Relatórios</li>
-<li class="side-nav-item">
-    <a data-bs-toggle="collapse" href="#sidebarReports" aria-expanded="false" aria-controls="sidebarReports" class="side-nav-link">
-        <i class="uil-file-alt"></i>
-        <span> Relatórios </span>
-        <span class="menu-arrow"></span>
-    </a>
-    <div class="collapse" id="sidebarReports">
-        <ul class="side-nav-second-level">
-            <li>
-                <a href="#">Relatório de Curso</a>
-            </li>
-            <li>
-                <a href="#">Relatório de Turma</a>
-            </li>
-            <li>
-                <a href="#">Relatório de Disciplina</a>
-            </li>
-            <li>
-                <a href="#">Relatório de Avaliação</a>
-            </li>
-            <li>
-                <a href="#">Relatório de Estudante</a>
-            </li>
-            <li>
-                <a href="#">Relatório de Realizações</a>
-            </li>
-        </ul>
-    </div>
-</li>
-
-               
+                        <li class="side-nav-title side-nav-item mt-1">Estudantes</li>
                        
+
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarStudentManagement" aria-expanded="false" aria-controls="sidebarStudentManagement" class="side-nav-link">
+                                <i class="uil-graduation-hat"></i>
+                                <span> Estudantes </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarStudentManagement">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a data-bs-toggle="collapse" href="#submenuTurma" aria-expanded="false" aria-controls="submenuTurma">Turma <span class="menu-arrow"></span></a>
+                                        <div class="collapse" id="submenuTurma">
+                                            <ul class="side-nav-third-level">
+                                                <li><a href="../Turma/FRMListarTurmas.jsp">Listar Turmas</a></li>
+                                                <li><a href="../Turma/FRMCadastroTurma.jsp">Cadastrar Turma</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-bs-toggle="collapse" href="#submenuAvaliacao" aria-expanded="false" aria-controls="submenuAvaliacao">Avaliação <span class="menu-arrow"></span></a>
+                                        <div class="collapse" id="submenuAvaliacao">
+                                            <ul class="side-nav-third-level">
+                                                <li><a href="../Avaliacao/FRMListarAvaliacoes.jsp">Listar Avaliações</a></li>
+                                                <li><a href="../Avaliacao/FRMCadastroAvaliacao.jsp">Cadastrar Avaliação</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-bs-toggle="collapse" href="#submenuDisciplina" aria-expanded="false" aria-controls="submenuDisciplina">Disciplina <span class="menu-arrow"></span></a>
+                                        <div class="collapse" id="submenuDisciplina">
+                                            <ul class="side-nav-third-level">
+                                                <li><a href="../Disciplina/FRMListarDisciplinas.jsp">Listar Disciplinas</a></li>
+                                                <li><a href="../Disciplina/FRMListarDisciplinas.jsp">Cadastrar Disciplina</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-bs-toggle="collapse" href="#submenuRealizacoes" aria-expanded="false" aria-controls="submenuRealizacoes">Realizações <span class="menu-arrow"></span></a>
+                                        <div class="collapse" id="submenuRealizacoes">
+                                            <ul class="side-nav-third-level">
+                                                <li><a href="../NotaRealiza/FRMListarRealizas.jsp">Listar Realizações</a></li>
+                                                <li><a href="../NotaRealiza/FRMRealizaCadastrar.jsp">Cadastrar Realização</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-bs-toggle="collapse" href="#submenuCurso" aria-expanded="false" aria-controls="submenuCurso">Curso <span class="menu-arrow"></span></a>
+                                        <div class="collapse" id="submenuCurso">
+                                            <ul class="side-nav-third-level">
+                                                <li><a href="../Curso/FRMListarCursos.jsp">Listar Cursos</a></li>
+                                                <li><a href="../Curso/FRMCadastroCurso.jsp">Cadastrar Curso</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- Menu de Relatórios -->
+                        <li class="side-nav-title side-nav-item mt-1">Relatórios</li>
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarReports" aria-expanded="false" aria-controls="sidebarReports" class="side-nav-link">
+                                <i class="uil-file-alt"></i>
+                                <span> Relatórios </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarReports">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="#">Relatório de Curso</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/TurmaServlet?action=report">Relatório de Turma</a>
+                                    </li>
+                                    <li>
+
+                                        <a href="${pageContext.request.contextPath}/DisciplinaServlet?action=report">Relatório de Disciplina</a>
+
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/AvaliacaoServlet?action=report" >Relatório de Avaliação</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/EstudanteServlet?action=report">Relatório de Estudante</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/RealizaServlet?action=generateReport" >Relatório de Realizações</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+
+
                     </ul>
 
 
@@ -212,7 +214,7 @@
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
                                     </a>
-                
+
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
@@ -491,7 +493,7 @@
                         </div>
                     </div>
                     <!-- end Topbar -->
-                    
+
                     <!-- Start Content-->
                     <div class="container-fluid">
 
@@ -593,7 +595,7 @@
                             </div>
                         </div>
 
-                        
+
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
@@ -974,7 +976,7 @@
                         <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="dark" id="dark-mode-check">
                         <label class="form-check-label" for="dark-mode-check">Dark Mode</label>
                     </div>
-       
+
 
                     <!-- Width -->
                     <h5 class="mt-4">Width</h5>
@@ -988,7 +990,7 @@
                         <input class="form-check-input" type="checkbox" name="width" value="boxed" id="boxed-check">
                         <label class="form-check-label" for="boxed-check">Boxed</label>
                     </div>
-        
+
 
                     <!-- Left Sidebar-->
                     <h5 class="mt-4">Left Sidebar</h5>
@@ -1025,7 +1027,7 @@
 
                     <div class="d-grid mt-4">
                         <button class="btn btn-primary" id="resetBtn">Reset to Default</button>
-            
+
                         <a href="../../product/hyper-responsive-admin-dashboard-template/index.htm" class="btn btn-danger mt-3" target="_blank"><i class="mdi mdi-basket me-1"></i> Purchase Now</a>
                     </div>
                 </div> <!-- end padding-->
