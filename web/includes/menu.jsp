@@ -15,16 +15,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  ">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">Página Inicial <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="../Home_Page/Home.jsp">Página Inicial <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="cursos.html"> Cursos</a>
+                  <a class="nav-link" href="../Curso/FRMListarCursos.jsp"> Cursos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="alunos.html">Alunos </a>
+                  <a class="nav-link" href="../Estudante/FRMListarEstudantes.jsp">Estudantes </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="matriculas.html"> Matrículas </a>
+                  <a class="nav-link" href="../Avaliacao/FRMListarAvaliacoes.jsp"> Avaliacoes </a>
               </li>
             </ul>
             <div class="user_option">

@@ -101,7 +101,7 @@ public final class FRMListarTurmas_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("        </script>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("          ");
+      out.write("        ");
       out.write("\n");
       out.write("\n");
       out.write("\n");
@@ -119,16 +119,16 @@ public final class FRMListarTurmas_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("          <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n");
       out.write("            <ul class=\"navbar-nav  \">\n");
       out.write("              <li class=\"nav-item active\">\n");
-      out.write("                <a class=\"nav-link\" href=\"index.html\">Página Inicial <span class=\"sr-only\">(current)</span></a>\n");
+      out.write("                  <a class=\"nav-link\" href=\"../Home_Page/Home.jsp\">Página Inicial <span class=\"sr-only\">(current)</span></a>\n");
       out.write("              </li>\n");
       out.write("              <li class=\"nav-item\">\n");
-      out.write("                <a class=\"nav-link\" href=\"cursos.html\"> Cursos</a>\n");
+      out.write("                  <a class=\"nav-link\" href=\"../Curso/FRMListarCursos.jsp\"> Cursos</a>\n");
       out.write("              </li>\n");
       out.write("              <li class=\"nav-item\">\n");
-      out.write("                <a class=\"nav-link\" href=\"alunos.html\">Alunos </a>\n");
+      out.write("                  <a class=\"nav-link\" href=\"../Estudante/FRMListarEstudantes.jsp\">Estudantes </a>\n");
       out.write("              </li>\n");
       out.write("              <li class=\"nav-item\">\n");
-      out.write("                <a class=\"nav-link\" href=\"matriculas.html\"> Matrículas </a>\n");
+      out.write("                  <a class=\"nav-link\" href=\"../Avaliacao/FRMListarAvaliacoes.jsp\"> Avaliacoes </a>\n");
       out.write("              </li>\n");
       out.write("            </ul>\n");
       out.write("            <div class=\"user_option\">\n");
@@ -167,7 +167,7 @@ public final class FRMListarTurmas_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("\n");
+      out.write("%>\n");
       out.write("        <div class=\"container mt-4\">\n");
       out.write("            ");
       out.write("\n");

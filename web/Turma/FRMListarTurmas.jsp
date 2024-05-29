@@ -35,7 +35,7 @@
         </script>
     </head>
     <body>
-       
+        <%@include file="../includes/menu.jsp" %>
         <div class="container mt-4">
             <%-- Exibir mensagens de sucesso ou erro --%>
             <c:choose>

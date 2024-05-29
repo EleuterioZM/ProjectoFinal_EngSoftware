@@ -79,11 +79,20 @@
                         <li class="side-nav-item">
                             <a data-bs-toggle="collapse" href="#sidebarStudentManagement" aria-expanded="false" aria-controls="sidebarStudentManagement" class="side-nav-link">
                                 <i class="uil-graduation-hat"></i>
-                                <span> Estudantes </span>
+                                <span>Gestao Estudantes </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <div class="collapse" id="sidebarStudentManagement">
                                 <ul class="side-nav-second-level">
+                                    <li>
+                                        <a data-bs-toggle="collapse" href="#submenuTurma" aria-expanded="false" aria-controls="submenuTurma">Estudantes <span class="menu-arrow"></span></a>
+                                        <div class="collapse" id="submenuTurma">
+                                            <ul class="side-nav-third-level">
+                                                <li><a href="../Estudante/FRMListarEstudantes.jsp">Listar Estudantes</a></li>
+                                                <li><a href="../Estudante/FRMCadastroEstudantes.jsp">Cadastrar Estudante</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
                                     <li>
                                         <a data-bs-toggle="collapse" href="#submenuTurma" aria-expanded="false" aria-controls="submenuTurma">Turma <span class="menu-arrow"></span></a>
                                         <div class="collapse" id="submenuTurma">

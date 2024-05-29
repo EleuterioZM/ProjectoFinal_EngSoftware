@@ -65,6 +65,9 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <link href=\"../css/Pagina_Inicial.css\" rel=\"stylesheet\" />\n");
       out.write("    </head>\n");
       out.write("    <body id=\"page-top\">\n");
+      out.write("          <a href=\"index.jsp\" style=\"position: fixed; top: 20px; left: 20px; z-index: 9999;\">\n");
+      out.write("    <i class=\"fas fa-arrow-right\" style=\"font-size: 24px; color: white;\"></i>\n");
+      out.write("</a>\n");
       out.write("        <!-- Navegação-->\n");
       out.write("        <nav class=\"navbar navbar-expand-lg navbar-light fixed-top py-3\" id=\"mainNav\">\n");
       out.write("            <div class=\"container px-4 px-lg-5\">\n");
@@ -85,7 +88,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"col-lg-8 align-self-baseline\">\n");
       out.write("                        <p class=\"text-white-75 mb-5\">O Sistema de Gestão de Estudantes pode ajudá-lo a gerenciar os alunos de forma eficaz! Basta integrá-lo e começar a gerenciar, sem complicações!</p>\n");
       out.write("                        <a class=\"btn btn-primary btn-xl me-2\" href=\"../Home_Page/PesquisarEstudante.jsp\">Alunos</a>\n");
-      out.write("                        <a class=\"btn btn-success btn-xl\" href=\"../Admin_dashbaord/dashboard-analytics.html\">Administradores</a>\n");
+      out.write("                        <a class=\"btn btn-success btn-xl\" href=\"../Admin_dashbaord/dashboard-crm.jsp\">Administradores</a>\n");
       out.write("                    </div>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
