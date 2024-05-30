@@ -7,11 +7,14 @@
         <title>Cadastrar Disciplina</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
         <link rel="stylesheet" href="../css/Estudantes.css"> <!-- Reusing the same CSS file -->
-        
-        
+        <!-- Adicionando o Font Awesome CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+
     </head>
     <body>
- 
+
         <div class="container">
             <div class="text">
                 Cadastro de Disciplina
@@ -46,7 +49,9 @@
                 </div>
             </form>
         </div>
-
+            <a href="FRMListarDisciplinas.jsp" style="position: fixed; top: 20px; left: 20px; z-index: 9999;">
+            <i class="fas fa-arrow-right fa-flip-horizontal rotate-icon" style="font-size: 30px; color: white;"></i>
+        </a>
     </body>
-  
+
 </html>

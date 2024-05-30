@@ -42,17 +42,26 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>JSP Page</title>\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
-      out.write("        <h1>Hello World!</h1>\n");
-      out.write("    </body>\n");
+      out.write("<head>\n");
+      out.write("    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("    <title>JSP Page</title>\n");
+      out.write("    <!-- Adicionando o Bootstrap CSS -->\n");
+      out.write("    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\">\n");
+      out.write("    <!-- Adicionando o Font Awesome CSS -->\n");
+      out.write("    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\">\n");
+      out.write("    <style>\n");
+      out.write("        .rotate-icon:hover {\n");
+      out.write("            transform: rotate(10deg);\n");
+      out.write("        }\n");
+      out.write("    </style>\n");
+      out.write("</head>\n");
+      out.write("<body>\n");
+      out.write("    <a href=\"index.jsp\" style=\"position: fixed; top: 20px; left: 20px; z-index: 9999;\">\n");
+      out.write("        <i class=\"fas fa-arrow-right fa-flip-horizontal rotate-icon\" style=\"font-size: 24px; color: black;\"></i>\n");
+      out.write("    </a>\n");
+      out.write("</body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

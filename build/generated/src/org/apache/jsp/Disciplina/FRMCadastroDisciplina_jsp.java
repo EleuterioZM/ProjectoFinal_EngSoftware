@@ -50,11 +50,14 @@ public final class FRMCadastroDisciplina_jsp extends org.apache.jasper.runtime.H
       out.write("        <title>Cadastrar Disciplina</title>\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"../css/Estudantes.css\"> <!-- Reusing the same CSS file -->\n");
-      out.write("        \n");
-      out.write("        \n");
+      out.write("        <!-- Adicionando o Font Awesome CSS -->\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\">\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write(" \n");
+      out.write("\n");
       out.write("        <div class=\"container\">\n");
       out.write("            <div class=\"text\">\n");
       out.write("                Cadastro de Disciplina\n");
@@ -91,9 +94,11 @@ public final class FRMCadastroDisciplina_jsp extends org.apache.jasper.runtime.H
       out.write("                </div>\n");
       out.write("            </form>\n");
       out.write("        </div>\n");
-      out.write("\n");
+      out.write("        <a href=\"FRMListarCursos.jsp\" style=\"position: fixed; top: 20px; left: 20px; z-index: 9999;\">\n");
+      out.write("            <i class=\"fas fa-arrow-right fa-flip-horizontal rotate-icon\" style=\"font-size: 30px; color: white;\"></i>\n");
+      out.write("        </a>\n");
       out.write("    </body>\n");
-      out.write("  \n");
+      out.write("\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

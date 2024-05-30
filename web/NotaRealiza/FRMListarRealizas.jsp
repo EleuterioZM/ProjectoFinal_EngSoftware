@@ -88,11 +88,19 @@
                 </thead>
                 <tbody>
                     <%
+                         int pageSize = 5;
+                        int currentPage = (request.getParameter("page") != null) ? Integer.parseInt(request.getParameter("page")) : 1;
+                       
                         RealizaDAO realizaDAO = new RealizaDAO();
                         List<Realiza> listaRealizacoes = realizaDAO.listarRealizacoes();
-                        int count = 0;
-                        for (Realiza realizacao : listaRealizacoes) {
+                         int totalRealizacoes = listaRealizacoes.size();
+                        int totalPages = (int) Math.ceil((double) totalRealizacoes / pageSize);
+                        int startIndex = (currentPage - 1) * pageSize;
+                        int endIndex = Math.min(startIndex + pageSize, totalRealizacoes);
+                        int count = startIndex;
+                         for (Realiza realizacao : listaRealizacoes.subList(startIndex, endIndex)) {
                             count++;
+                   
                     %>
                     <tr>
                         <td><%= count%></td>
@@ -114,6 +122,21 @@
                     <% }%>
                 </tbody>
             </table>
+                 <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item <%= (currentPage == 1) ? "disabled" : ""%>">
+                        <a class="page-link" href="?page=<%= currentPage - 1%>">Anterior</a>
+                    </li>
+                    <% for (int i = 1; i <= totalPages; i++) {%>
+                    <li class="page-item <%= (i == currentPage) ? "active" : ""%>">
+                        <a class="page-link" href="?page=<%= i%>"><%= i%></a>
+                    </li>
+                    <% }%>
+                    <li class="page-item <%= (currentPage == totalPages || totalPages == 0) ? "disabled" : ""%>">
+                        <a class="page-link" href="?page=<%= currentPage + 1%>">Próximo</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
         <!-- Adicione aqui os scripts necessários, como o Bootstrap e o Font Awesome -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -12,6 +12,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/Estudantes.css"> <!-- Este é o estilo da página de cadastro de estudantes -->
+         <!-- Adicionando o Font Awesome CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
         <style>
             * {
                 border: 0;
@@ -33,7 +36,8 @@
                 display: flex;
             }
             body {
-                background: #f1f1f1;
+                background: #ff9966;
+                
                 height: 100vh;
             }
             .search-bar input,
@@ -155,7 +159,7 @@
                     color: #f1f1f1;
                 }
                 body {
-                    background: linear-gradient(115deg, #f1b636 10%, #f1b636 90%);
+                    background: #ff9966;
                 }
                 .search-bar input {
                     box-shadow: 0 0 0 0.4em #f1f1f1 inset;
@@ -235,7 +239,9 @@
                 }
             %>
 
-
+            <a href="Home.jsp" style="position: fixed; top: 20px; left: 20px; z-index: 9999;">
+            <i class="fas fa-arrow-right fa-flip-horizontal rotate-icon" style="font-size: 30px; color: white;"></i>
+        </a>
     </body>
 
 </html>

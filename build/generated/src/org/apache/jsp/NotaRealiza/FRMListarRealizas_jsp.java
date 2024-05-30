@@ -87,7 +87,7 @@ public final class FRMListarRealizas_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("          ");
+      out.write("       ");
       out.write("\n");
       out.write("\n");
       out.write("\n");
@@ -105,16 +105,16 @@ public final class FRMListarRealizas_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("          <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n");
       out.write("            <ul class=\"navbar-nav  \">\n");
       out.write("              <li class=\"nav-item active\">\n");
-      out.write("                <a class=\"nav-link\" href=\"index.html\">Página Inicial <span class=\"sr-only\">(current)</span></a>\n");
+      out.write("                  <a class=\"nav-link\" href=\"../Home_Page/Home.jsp\">Página Inicial <span class=\"sr-only\">(current)</span></a>\n");
       out.write("              </li>\n");
       out.write("              <li class=\"nav-item\">\n");
-      out.write("                <a class=\"nav-link\" href=\"cursos.html\"> Cursos</a>\n");
+      out.write("                  <a class=\"nav-link\" href=\"../Curso/FRMListarCursos.jsp\"> Cursos</a>\n");
       out.write("              </li>\n");
       out.write("              <li class=\"nav-item\">\n");
-      out.write("                <a class=\"nav-link\" href=\"alunos.html\">Alunos </a>\n");
+      out.write("                  <a class=\"nav-link\" href=\"../Estudante/FRMListarEstudantes.jsp\">Estudantes </a>\n");
       out.write("              </li>\n");
       out.write("              <li class=\"nav-item\">\n");
-      out.write("                <a class=\"nav-link\" href=\"matriculas.html\"> Matrículas </a>\n");
+      out.write("                  <a class=\"nav-link\" href=\"../Avaliacao/FRMListarAvaliacoes.jsp\"> Avaliacoes </a>\n");
       out.write("              </li>\n");
       out.write("            </ul>\n");
       out.write("            <div class=\"user_option\">\n");
@@ -186,11 +186,19 @@ public final class FRMListarRealizas_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                <tbody>\n");
       out.write("                    ");
 
+                         int pageSize = 5;
+                        int currentPage = (request.getParameter("page") != null) ? Integer.parseInt(request.getParameter("page")) : 1;
+                       
                         RealizaDAO realizaDAO = new RealizaDAO();
                         List<Realiza> listaRealizacoes = realizaDAO.listarRealizacoes();
-                        int count = 0;
-                        for (Realiza realizacao : listaRealizacoes) {
+                         int totalRealizacoes = listaRealizacoes.size();
+                        int totalPages = (int) Math.ceil((double) totalRealizacoes / pageSize);
+                        int startIndex = (currentPage - 1) * pageSize;
+                        int endIndex = Math.min(startIndex + pageSize, totalRealizacoes);
+                        int count = startIndex;
+                         for (Realiza realizacao : listaRealizacoes.subList(startIndex, endIndex)) {
                             count++;
+                   
                     
       out.write("\n");
       out.write("                    <tr>\n");
@@ -247,6 +255,40 @@ public final class FRMListarRealizas_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\n");
       out.write("                </tbody>\n");
       out.write("            </table>\n");
+      out.write("                 <nav aria-label=\"Page navigation example\">\n");
+      out.write("                <ul class=\"pagination justify-content-center\">\n");
+      out.write("                    <li class=\"page-item ");
+      out.print( (currentPage == 1) ? "disabled" : "");
+      out.write("\">\n");
+      out.write("                        <a class=\"page-link\" href=\"?page=");
+      out.print( currentPage - 1);
+      out.write("\">Anterior</a>\n");
+      out.write("                    </li>\n");
+      out.write("                    ");
+ for (int i = 1; i <= totalPages; i++) {
+      out.write("\n");
+      out.write("                    <li class=\"page-item ");
+      out.print( (i == currentPage) ? "active" : "");
+      out.write("\">\n");
+      out.write("                        <a class=\"page-link\" href=\"?page=");
+      out.print( i);
+      out.write('"');
+      out.write('>');
+      out.print( i);
+      out.write("</a>\n");
+      out.write("                    </li>\n");
+      out.write("                    ");
+ }
+      out.write("\n");
+      out.write("                    <li class=\"page-item ");
+      out.print( (currentPage == totalPages || totalPages == 0) ? "disabled" : "");
+      out.write("\">\n");
+      out.write("                        <a class=\"page-link\" href=\"?page=");
+      out.print( currentPage + 1);
+      out.write("\">Próximo</a>\n");
+      out.write("                    </li>\n");
+      out.write("                </ul>\n");
+      out.write("            </nav>\n");
       out.write("        </div>\n");
       out.write("        <!-- Adicione aqui os scripts necessários, como o Bootstrap e o Font Awesome -->\n");
       out.write("        <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>\n");

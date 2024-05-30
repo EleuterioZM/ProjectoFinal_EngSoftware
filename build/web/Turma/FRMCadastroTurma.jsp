@@ -9,8 +9,8 @@
 <%@page import="DAO.CursoDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div class="sidebar">
-    
-    </div>
+
+</div>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,22 +19,25 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
         <!-- You might need to adjust the path to your CSS file -->
         <link rel="stylesheet" href="../css/Estudantes.css">
-         <style>
-                  
-        .sidebar {
-           
-         
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            overflow-y: auto;
-        }
-        .content {
-            flex: 1;
-            margin-left: 140px; /* Largura do dashboard */
-            padding-top: 70px; /* Espaçamento do topo */
-        }
+        <!-- Adicionando o Font Awesome CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+        <style>
+
+            .sidebar {
+
+
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                overflow-y: auto;
+            }
+            .content {
+                flex: 1;
+                margin-left: 140px; /* Largura do dashboard */
+                padding-top: 70px; /* Espaçamento do topo */
+            }
         </style>
     </head>
     <body>
@@ -77,5 +80,8 @@
                 </div>
             </form>
         </div>
+        <a href="FRMListarTurmas.jsp" style="position: fixed; top: 20px; left: 20px; z-index: 9999;">
+            <i class="fas fa-arrow-right fa-flip-horizontal rotate-icon" style="font-size: 30px; color: white;"></i>
+        </a>
     </body>
 </html>
