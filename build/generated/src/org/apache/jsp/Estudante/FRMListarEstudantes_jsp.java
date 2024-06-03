@@ -306,7 +306,7 @@ public final class FRMListarEstudantes_jsp extends org.apache.jasper.runtime.Htt
       out.write("                                }\n");
       out.write("\n");
       out.write("        </script>\n");
-      out.write("        <script>\n");
+      out.write("          <script>\n");
       out.write("            // Esconder alertas após 5 segundos\n");
       out.write("            $(document).ready(function () {\n");
       out.write("                $(\".alert\").each(function (index, element) {\n");

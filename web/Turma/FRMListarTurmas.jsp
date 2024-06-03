@@ -22,7 +22,7 @@
                 background-color: #ff9966; /* Cor de fundo */
             }
         </style>
-        <script src="../js/alertas.js"></script>
+      
         <script>
             // Chamar a função para exibir a mensagem de exclusão com sucesso quando a página for carregada
             window.onload = function () {
@@ -134,17 +134,21 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script>
-                             // Esconder alertas após 5 segundos
-                             $(document).ready(function () {
-                                 $(".alert").each(function (index, element) {
-                                     var alert = $(element);
-                                     setTimeout(function () {
-                                         alert.alert('close');
-                                     }, 5000);
-                                 });
-                             });
-        </script>
+       <script>
+  
+    // Esconder alertas após 5 segundos
+$(document).ready(function () {
+    $(".alert").each(function (index, element) {
+        var alert = $(element);
+        setTimeout(function () {
+            alert('close'); // Remova ".alert" da chamada
+        }, 5000);
+    });
+});
+
+    
+</script>
+
   <script src="../includes/jquery.js"></script>
  
         <script src="../includes/custom.js"></script>

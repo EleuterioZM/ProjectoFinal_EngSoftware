@@ -192,9 +192,6 @@ public List<Estudante> listarEstudantesComTurma() {
             return listaEstudantes;
         }
 
-        public static void main(String[] args) {
-            EstudanteDAO estudanteDAO = new EstudanteDAO();
-            System.out.println(estudanteDAO.listarEstudantes());
-        }
+    
     
 }

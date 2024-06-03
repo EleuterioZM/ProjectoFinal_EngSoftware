@@ -146,7 +146,7 @@
                                 }
 
         </script>
-        <script>
+          <script>
             // Esconder alertas após 5 segundos
             $(document).ready(function () {
                 $(".alert").each(function (index, element) {
