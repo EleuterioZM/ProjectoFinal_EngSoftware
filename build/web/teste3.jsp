@@ -1,3 +1,5 @@
+<%@page import="Model.Curso"%>
+<%@page import="DAO.CursoDAO"%>
 <%@page import="Model.Turma"%>
 <%@page import="DAO.TurmaDAO"%>
 <%@page import="java.util.List"%>
@@ -102,20 +104,28 @@
         <th>Endereço</th>
         <th>Contacto</th>
         <th>Turma</th>
+        <th>Curso</th>
+                    <th>Realizações</th>
         <th>Ações</th>
     </tr>
     <% 
         EstudanteDAO estudanteDAO = new EstudanteDAO();
         List<Estudante> listaEstudantes = estudanteDAO.listarEstudantesComTurma();
         for (Estudante estudante : listaEstudantes) { %>
+        <%
+            CursoDAO cursoDAO = new CursoDAO();
+        turmaDAO.listarTurmasComCurso();
+        
+        %>
         <tr>
             <td><%= estudante.getNrMatricula() %></td>
             <td><%= estudante.getNome() %></td>
             <td><%= estudante.getApelido() %></td>
             <td><%= estudante.getEndereco() %></td>
-            <td><%= estudante.getContacto() %></td>
+            <td><%= estudante.getContacto() %></td>    
            <td><%= estudante.getTurma() != null ? estudante.getTurma().getNome() : "Turma não definida" %></td>
-<td>
+  <td><%= estudante.getTurma().getCurso().getNome() %></td> 
+           <td>
     <button onclick="preencherFormulario('<%= estudante.getNrMatricula() %>', '<%= estudante.getNome() %>', '<%= estudante.getApelido() %>', '<%= estudante.getEndereco() %>', '<%= estudante.getContacto() %>', '<%= estudante.getTurma() != null ? estudante.getTurma().getId() : "" %>')">Editar</button>
     <form action="EstudanteServlet?action=delete" method="post">
         <input type="hidden" name="nrMatricula" value="<%= estudante.getNrMatricula() %>">

@@ -179,65 +179,69 @@
 
     <body>
 
-        <div class="content">
-            <h2 class="text">Pesquisar Estudante</h2>
+          <div class="content">
+       <h3> pesquisar Estudante   </h3> 
+        <form action="" class="search-bar">
+            <input type="search" name="search" pattern=".*\S.*" required>
+            <button class="search-btn" type="submit">
+                <span>Search</span>
+            </button>
+        </form>
 
-            <form action="" class="search-bar">
-                <input type="search" name="search" pattern=".*\S.*" required>
-                <button class="search-btn" type="submit">
-                    <span>Search</span>
-                </button>
-
-            </form>
-
-
-
-            <%
-                String nomeParam = request.getParameter("search");
-                if (nomeParam != null && !nomeParam.isEmpty()) {
-                    EstudanteDAO estudanteDAO = new EstudanteDAO();
-                    List<Estudante> estudantesEncontrados = estudanteDAO.buscarPorNome(nomeParam);
-                    if (!estudantesEncontrados.isEmpty()) {
-            %>
-            <table class="table table-striped mt-4 table-dark">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Número de Matrícula</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Apelido</th>
-                        <th scope="col">Endereço</th>
-                        <th scope="col">Contacto</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <%
-                        int count = 1;
-                        for (Estudante estudante : estudantesEncontrados) {
-                    %>
-                    <tr>
-                        <td><%= count++%></td>
-                        <td><%= estudante.getNrMatricula()%></td>
-                        <td><%= estudante.getNome()%></td>
-                        <td><%= estudante.getApelido()%></td>
-                        <td><%= estudante.getEndereco()%></td>
-                        <td><%= estudante.getContacto()%></td>
-
-                    </tr>
-                    <%
-                        }
-                    %>
-                </tbody>
-            </table>
-            <%
-            } else {
-            %>
-            <p class="text-white">Nenhum estudante encontrado com o nome "<%= nomeParam%>".</p>
-            <%
+        <!-- Tabela de resultados -->
+        <%
+            String nomeParam = request.getParameter("search");
+            if (nomeParam != null && !nomeParam.isEmpty()) {
+                EstudanteDAO estudanteDAO = new EstudanteDAO();
+                List<Estudante> estudantesEncontrados = estudanteDAO.buscarPorNome(nomeParam);
+                if (!estudantesEncontrados.isEmpty()) {
+        %>
+        <table class="table table-striped mt-4 table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Número de Matrícula</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Apelido</th>
+                    <th scope="col">Endereço</th>
+                    <th scope="col">Contacto</th>
+                    <th scope="col">Turma</th>
+                    <th scope="col">Curso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                    int count = 1;
+                    for (Estudante estudante : estudantesEncontrados) {
+                %>
+                <tr>
+                    <td><%= count++%></td>
+                    <td><%= estudante.getNrMatricula()%></td>
+                    <td><%= estudante.getNome()%></td>
+                    <td><%= estudante.getApelido()%></td>
+                    <td><%= estudante.getEndereco()%></td>
+                    <td><%= estudante.getContacto()%></td>
+                    <td><%= estudante.getTurma() != null ? estudante.getTurma().getNome() : "N/A" %></td>
+                    <td><%= estudante.getTurma() != null && estudante.getTurma().getCurso() != null ? estudante.getTurma().getCurso().getNome() : "N/A" %></td>
+                </tr>
+                <%
                     }
-                }
-            %>
+                %>
+            </tbody>
+        </table>
+        <% } else { %>
+        <!-- Mensagem se nenhum estudante for encontrado -->
+        <p class="text-white">Nenhum estudante encontrado com o nome "<%= nomeParam%>".</p>
+        <% }
+            } %>
+
+        <!-- Botão de retorno à página inicial -->
+        <a href="Home.jsp" style="position: fixed; top: 20px; left: 20px; z-index: 9999;">
+            <i class="fas fa-arrow-right fa-flip-horizontal rotate-icon" style="font-size: 30px; color: white;"></i>
+        </a>
+    </div>
+
+       
 
             <a href="Home.jsp" style="position: fixed; top: 20px; left: 20px; z-index: 9999;">
             <i class="fas fa-arrow-right fa-flip-horizontal rotate-icon" style="font-size: 30px; color: white;"></i>

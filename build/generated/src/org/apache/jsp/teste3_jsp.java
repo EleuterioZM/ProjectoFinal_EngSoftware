@@ -3,6 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import Model.Curso;
+import DAO.CursoDAO;
 import Model.Turma;
 import DAO.TurmaDAO;
 import java.util.List;
@@ -46,6 +48,8 @@ public final class teste3_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\n");
+      out.write("\n");
       out.write("\n");
       out.write("\n");
       out.write("\n");
@@ -194,6 +198,8 @@ public final class teste3_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <th>Endereço</th>\n");
       out.write("        <th>Contacto</th>\n");
       out.write("        <th>Turma</th>\n");
+      out.write("        <th>Curso</th>\n");
+      out.write("                    <th>Realizações</th>\n");
       out.write("        <th>Ações</th>\n");
       out.write("    </tr>\n");
       out.write("    ");
@@ -201,6 +207,13 @@ public final class teste3_jsp extends org.apache.jasper.runtime.HttpJspBase
         EstudanteDAO estudanteDAO = new EstudanteDAO();
         List<Estudante> listaEstudantes = estudanteDAO.listarEstudantesComTurma();
         for (Estudante estudante : listaEstudantes) { 
+      out.write("\n");
+      out.write("        ");
+
+            CursoDAO cursoDAO = new CursoDAO();
+        turmaDAO.listarTurmasComCurso();
+        
+        
       out.write("\n");
       out.write("        <tr>\n");
       out.write("            <td>");
@@ -217,11 +230,14 @@ public final class teste3_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</td>\n");
       out.write("            <td>");
       out.print( estudante.getContacto() );
-      out.write("</td>\n");
+      out.write("</td>    \n");
       out.write("           <td>");
       out.print( estudante.getTurma() != null ? estudante.getTurma().getNome() : "Turma não definida" );
       out.write("</td>\n");
-      out.write("<td>\n");
+      out.write("  <td>");
+      out.print( estudante.getTurma().getCurso().getNome() );
+      out.write("</td> \n");
+      out.write("           <td>\n");
       out.write("    <button onclick=\"preencherFormulario('");
       out.print( estudante.getNrMatricula() );
       out.write("', '");

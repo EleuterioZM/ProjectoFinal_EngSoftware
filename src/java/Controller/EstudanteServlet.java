@@ -67,7 +67,7 @@ public class EstudanteServlet extends HttpServlet {
                 generateReport(request, response);
                 break;
                 default:
-                    listEstudantes(request, response);
+                    listarEstudantes(request, response);
                     break;
             }
         } else {
@@ -488,6 +488,19 @@ private void generateReport(HttpServletRequest request, HttpServletResponse resp
         e.printStackTrace();
     }
 }
+ private void listarEstudantes(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        EstudanteDAO estudanteDAO = new EstudanteDAO();
+        List<Estudante> listaEstudantes = estudanteDAO.listarTodos();
+
+        if (listaEstudantes != null) {
+            request.setAttribute("listaEstudantes", listaEstudantes);
+            request.getRequestDispatcher("Admin.jsp").forward(request, response);
+          
+        } else {
+            response.getWriter().println("Nenhum estudante encontrado.");
+        }
+    }
 
 }
 
