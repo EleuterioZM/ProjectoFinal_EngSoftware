@@ -321,9 +321,7 @@ private void generateReporte(HttpServletRequest request, HttpServletResponse res
     } catch (Exception e) {
         e.printStackTrace();
     }
-}
-
-private void generateReport(HttpServletRequest request, HttpServletResponse response) {
+}private void generateReport(HttpServletRequest request, HttpServletResponse response) {
     Document document = new Document();
 
     try {
@@ -351,7 +349,7 @@ private void generateReport(HttpServletRequest request, HttpServletResponse resp
         tabela.setSpacingAfter(10f);
 
         // Define as larguras das colunas
-        float[] columnWidths = {2f, 2f, 2f};
+        float[] columnWidths = {1f, 1f, 1f}; // Tamanhos iguais para as colunas
         tabela.setWidths(columnWidths);
 
         // Adiciona cabeçalhos à tabela
@@ -360,7 +358,7 @@ private void generateReport(HttpServletRequest request, HttpServletResponse resp
         String[] headers = {"ID Avaliação", "ID Estudante", "Nota"};
         for (String header : headers) {
             PdfPCell headerCell = new PdfPCell(new Paragraph(header, headerFont));
-           headerCell.setBackgroundColor(headerColor);
+            headerCell.setBackgroundColor(headerColor);
             headerCell.setHorizontalAlignment(Element.ALIGN_CENTER);
             headerCell.setPadding(10);
             tabela.addCell(headerCell);
@@ -375,6 +373,16 @@ private void generateReport(HttpServletRequest request, HttpServletResponse resp
             PdfPCell idAvaliacaoCell = new PdfPCell(new Paragraph(Integer.toString(realizacao.getId().getIdAvaliacao()), cellFont));
             PdfPCell idEstudanteCell = new PdfPCell(new Paragraph(Integer.toString(realizacao.getId().getIdEstudante()), cellFont));
             PdfPCell notaCell = new PdfPCell(new Paragraph(realizacao.getNota().toString(), cellFont));
+
+            // Define o estilo das células de dados
+            idAvaliacaoCell.setPadding(5); // Reduzindo o padding
+            idEstudanteCell.setPadding(5); // Reduzindo o padding
+            notaCell.setPadding(5); // Reduzindo o padding
+
+            // Define o alinhamento das células de dados
+            idAvaliacaoCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            idEstudanteCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            notaCell.setHorizontalAlignment(Element.ALIGN_CENTER);
 
             tabela.addCell(idAvaliacaoCell);
             tabela.addCell(idEstudanteCell);
@@ -419,5 +427,6 @@ private void generateReport(HttpServletRequest request, HttpServletResponse resp
         e.printStackTrace();
     }
 }
+
 
 }

@@ -216,120 +216,119 @@ public class AvaliacaoServlet extends HttpServlet {
 }
     private void Relatorio(HttpServletRequest request, HttpServletResponse response) {
         // Configuração do documento PDF
-        Document documento = new Document();
+    Document documento = new Document();
 
-        try {
-            // Diretório onde o PDF será temporariamente armazenado (pasta "temp" do servidor)
-            String tempDir = System.getProperty("java.io.tmpdir");
-            String filePath = tempDir + File.separator + "relatorio.pdf";
+    try {
+        // Diretório onde o PDF será temporariamente armazenado (pasta "temp" do servidor)
+        String tempDir = System.getProperty("java.io.tmpdir");
+        String filePath = tempDir + File.separator + "relatorio_avaliacoes.pdf";
 
-            // Cria um novo arquivo PDF
-            PdfWriter writer = PdfWriter.getInstance(documento, new FileOutputStream(filePath));
+        // Cria um novo arquivo PDF
+        PdfWriter writer = PdfWriter.getInstance(documento, new FileOutputStream(filePath));
 
-            // Abre o documento
-            documento.open();
+        // Abre o documento
+        documento.open();
 
-            // Adiciona título ao documento
-            Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 18, BaseColor.BLACK);
-            Paragraph titulo = new Paragraph("Relatório de Avaliações", titleFont);
-            titulo.setAlignment(Element.ALIGN_CENTER);
-            titulo.setSpacingAfter(20);
-            documento.add(titulo);
+        // Adiciona título ao documento
+        Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 18, BaseColor.BLACK);
+        Paragraph titulo = new Paragraph("Relatório de Avaliações", titleFont);
+        titulo.setAlignment(Element.ALIGN_CENTER);
+        titulo.setSpacingAfter(20);
+        documento.add(titulo);
 
-            // Cria uma tabela com 3 colunas
-            PdfPTable tabela = new PdfPTable(3);
-            tabela.setWidthPercentage(100);
-            tabela.setSpacingBefore(10f);
-            tabela.setSpacingAfter(10f);
+        // Cria uma tabela com 3 colunas
+        PdfPTable tabela = new PdfPTable(3);
+        tabela.setWidthPercentage(100);
+        tabela.setSpacingBefore(10f);
+        tabela.setSpacingAfter(10f);
 
-            // Define as larguras das colunas
-            float[] columnWidths = {1f, 3f, 2f};
-            tabela.setWidths(columnWidths);
+        // Define as larguras das colunas
+        float[] columnWidths = {1f, 3f, 2f};
+        tabela.setWidths(columnWidths);
 
-            // Adiciona cabeçalhos à tabela
-            Font headerFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.WHITE);
-            PdfPCell celula1 = new PdfPCell(new Paragraph("ID", headerFont));
-            PdfPCell celula2 = new PdfPCell(new Paragraph("Descrição", headerFont));
-            PdfPCell celula3 = new PdfPCell(new Paragraph("Peso", headerFont));
+        // Adiciona cabeçalhos à tabela
+        Font headerFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.WHITE);
+        PdfPCell celula1 = new PdfPCell(new Paragraph("ID", headerFont));
+        PdfPCell celula2 = new PdfPCell(new Paragraph("Descrição", headerFont));
+        PdfPCell celula3 = new PdfPCell(new Paragraph("Peso", headerFont));
 
-            // Define o estilo das células do cabeçalho
-            BaseColor headerColor = new BaseColor(0, 102, 204); // Cor azul para o cabeçalho
-            celula1.setBackgroundColor(headerColor);
-            celula2.setBackgroundColor(headerColor);
-            celula3.setBackgroundColor(headerColor);
-            celula1.setHorizontalAlignment(Element.ALIGN_CENTER);
-            celula2.setHorizontalAlignment(Element.ALIGN_CENTER);
-            celula3.setHorizontalAlignment(Element.ALIGN_CENTER);
-            celula1.setPadding(10);
-            celula2.setPadding(10);
-            celula3.setPadding(10);
+        // Define o estilo das células do cabeçalho
+        BaseColor headerColor = new BaseColor(0, 102, 204); // Cor azul para o cabeçalho
+        celula1.setBackgroundColor(headerColor);
+        celula2.setBackgroundColor(headerColor);
+        celula3.setBackgroundColor(headerColor);
+        celula1.setHorizontalAlignment(Element.ALIGN_CENTER);
+        celula2.setHorizontalAlignment(Element.ALIGN_CENTER);
+        celula3.setHorizontalAlignment(Element.ALIGN_CENTER);
+        celula1.setPadding(10);
+        celula2.setPadding(10);
+        celula3.setPadding(10);
 
-            tabela.addCell(celula1);
-            tabela.addCell(celula2);
-            tabela.addCell(celula3);
+        tabela.addCell(celula1);
+        tabela.addCell(celula2);
+        tabela.addCell(celula3);
 
-            // Recupera os dados da base de dados
-            List<Avaliacao> listaAvaliacoes = avaliacaoDAO.listarAvaliacoes();
-            Font cellFont = FontFactory.getFont(FontFactory.HELVETICA, 10, BaseColor.BLACK);
+        // Recupera os dados da base de dados
+        List<Avaliacao> listaAvaliacoes = avaliacaoDAO.listarAvaliacoes();
+        Font cellFont = FontFactory.getFont(FontFactory.HELVETICA, 10, BaseColor.BLACK);
 
-            // Adiciona os dados à tabela
-            for (Avaliacao avaliacao : listaAvaliacoes) {
-                PdfPCell idCell = new PdfPCell(new Paragraph(String.valueOf(avaliacao.getId()), cellFont));
-                PdfPCell descricaoCell = new PdfPCell(new Paragraph(avaliacao.getDescricao(), cellFont));
-                PdfPCell pesoCell = new PdfPCell(new Paragraph(avaliacao.getPeso().toString(), cellFont));
+        // Adiciona os dados à tabela
+        for (Avaliacao avaliacao : listaAvaliacoes) {
+            PdfPCell idCell = new PdfPCell(new Paragraph(String.valueOf(avaliacao.getId()), cellFont));
+            PdfPCell descricaoCell = new PdfPCell(new Paragraph(avaliacao.getDescricao(), cellFont));
+            PdfPCell pesoCell = new PdfPCell(new Paragraph(avaliacao.getPeso().toString(), cellFont));
 
-                // Define o estilo das células de dados
-                idCell.setPadding(10);
-                descricaoCell.setPadding(10);
-                pesoCell.setPadding(10);
-                idCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-                descricaoCell.setHorizontalAlignment(Element.ALIGN_LEFT);
-                pesoCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            // Define o estilo das células de dados
+            idCell.setPadding(10);
+            descricaoCell.setPadding(10);
+            pesoCell.setPadding(10);
+            idCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            descricaoCell.setHorizontalAlignment(Element.ALIGN_LEFT);
+            pesoCell.setHorizontalAlignment(Element.ALIGN_CENTER);
 
-                tabela.addCell(idCell);
-                tabela.addCell(descricaoCell);
-                tabela.addCell(pesoCell);
-            }
-
-            // Adiciona a tabela ao documento
-            documento.add(tabela);
-
-            // Adiciona assinatura ao documento
-            Font signatureFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.BLACK);
-            Paragraph assinadoPor = new Paragraph("Assinado por", signatureFont);
-            assinadoPor.setAlignment(Element.ALIGN_CENTER);
-            assinadoPor.setSpacingBefore(20);
-            documento.add(assinadoPor);
-
-            // Adiciona uma linha para assinatura
-            Paragraph linhaAssinatura = new Paragraph("__________________________________\n", signatureFont);
-            linhaAssinatura.setAlignment(Element.ALIGN_CENTER);
-            documento.add(linhaAssinatura);
-
-            // Fecha o documento
-            documento.close();
-
-            // Informa ao navegador que o arquivo PDF será baixado
-            response.setContentType("application/pdf");
-            response.setHeader("Content-Disposition", "attachment; filename=relatorio.pdf");
-
-            // Escreve o conteúdo do arquivo PDF no fluxo de saída da resposta
-            ServletOutputStream out = response.getOutputStream();
-            FileInputStream fis = new FileInputStream(new File(filePath));
-            byte[] buffer = new byte[4096];
-            int bytesRead;
-            while ((bytesRead = fis.read(buffer)) != -1) {
-                out.write(buffer, 0, bytesRead);
-            }
-
-            // Fecha os fluxos de entrada e saída
-            fis.close();
-            out.flush();
-        } catch (Exception e) {
-            e.printStackTrace();
+            tabela.addCell(idCell);
+            tabela.addCell(descricaoCell);
+            tabela.addCell(pesoCell);
         }
-    }
 
+        // Adiciona a tabela ao documento
+        documento.add(tabela);
+
+        // Adiciona assinatura ao documento
+        Font signatureFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.BLACK);
+        Paragraph assinadoPor = new Paragraph("Assinado por", signatureFont);
+        assinadoPor.setAlignment(Element.ALIGN_CENTER);
+        assinadoPor.setSpacingBefore(20);
+        documento.add(assinadoPor);
+
+        // Adiciona uma linha para assinatura
+        Paragraph linhaAssinatura = new Paragraph("__________________________________\n", signatureFont);
+        linhaAssinatura.setAlignment(Element.ALIGN_CENTER);
+        documento.add(linhaAssinatura);
+
+        // Fecha o documento
+        documento.close();
+
+        // Informa ao navegador que o arquivo PDF será baixado
+        response.setContentType("application/pdf");
+        response.setHeader("Content-Disposition", "attachment; filename=relatorio_avaliacoes.pdf");
+
+        // Escreve o conteúdo do arquivo PDF no fluxo de saída da resposta
+        ServletOutputStream out = response.getOutputStream();
+        FileInputStream fis = new FileInputStream(new File(filePath));
+        byte[] buffer = new byte[4096];
+        int bytesRead;
+        while ((bytesRead = fis.read(buffer)) != -1) {
+            out.write(buffer, 0, bytesRead);
+        }
+
+        // Fecha os fluxos de entrada e saída
+        fis.close();
+        out.flush();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
 }
 
 

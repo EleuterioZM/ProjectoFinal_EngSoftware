@@ -219,7 +219,7 @@ private void visualizarDisciplina(HttpServletRequest request, HttpServletRespons
            request.getRequestDispatcher("/Disciplina/FRMListarDisciplinas.jsp?message=updateSuccess").forward(request, response);
     }
     private void generateDisciplinaReport(HttpServletRequest request, HttpServletResponse response) {
-        Document document = new Document();
+    Document document = new Document();
 
     try {
         // Diretório onde o PDF será temporariamente armazenado (pasta "temp" do servidor)
@@ -246,20 +246,18 @@ private void visualizarDisciplina(HttpServletRequest request, HttpServletRespons
         tabela.setSpacingAfter(10f);
 
         // Define as larguras das colunas
-        float[] columnWidths = {2f, 3f, 2f, 2f};
+        float[] columnWidths = {1f, 3f, 1.5f, 1.5f}; // Ajuste dos tamanhos das colunas
         tabela.setWidths(columnWidths);
 
         // Adiciona cabeçalhos à tabela
         Font headerFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.WHITE);
-         BaseColor headerColor = new BaseColor(0, 102, 204);
+        BaseColor headerColor = new BaseColor(0, 102, 204);
         String[] headers = {"ID", "Nome", "CHS", "Crédito"};
         for (String header : headers) {
             PdfPCell headerCell = new PdfPCell(new Paragraph(header, headerFont));
-            
-            
-             headerCell.setBackgroundColor(headerColor);
+            headerCell.setBackgroundColor(headerColor);
             headerCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-            headerCell.setPadding(10);
+            headerCell.setPadding(5); // Reduzindo o padding
             tabela.addCell(headerCell);
         }
 
@@ -269,10 +267,24 @@ private void visualizarDisciplina(HttpServletRequest request, HttpServletRespons
 
         // Adiciona os dados à tabela
         for (Disciplina disciplina : listaDisciplinas) {
-            tabela.addCell(new PdfPCell(new Paragraph(String.valueOf(disciplina.getId()), cellFont)));
-            tabela.addCell(new PdfPCell(new Paragraph(disciplina.getNome(), cellFont)));
-            tabela.addCell(new PdfPCell(new Paragraph(String.valueOf(disciplina.getChs()), cellFont)));
-            tabela.addCell(new PdfPCell(new Paragraph(String.valueOf(disciplina.getCredito()), cellFont)));
+            PdfPCell idCell = new PdfPCell(new Paragraph(String.valueOf(disciplina.getId()), cellFont));
+            idCell.setPadding(5); // Reduzindo o padding
+            idCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            tabela.addCell(idCell);
+
+            PdfPCell nomeCell = new PdfPCell(new Paragraph(disciplina.getNome(), cellFont));
+            nomeCell.setPadding(5); // Reduzindo o padding
+            tabela.addCell(nomeCell);
+
+            PdfPCell chsCell = new PdfPCell(new Paragraph(String.valueOf(disciplina.getChs()), cellFont));
+            chsCell.setPadding(5); // Reduzindo o padding
+            chsCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            tabela.addCell(chsCell);
+
+            PdfPCell creditoCell = new PdfPCell(new Paragraph(String.valueOf(disciplina.getCredito()), cellFont));
+            creditoCell.setPadding(5); // Reduzindo o padding
+            creditoCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            tabela.addCell(creditoCell);
         }
 
         // Adiciona a tabela ao documento
