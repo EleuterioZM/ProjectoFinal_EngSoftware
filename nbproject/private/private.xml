@@ -2,22 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProjectoFinalEngSoftware/ProjectoFinal_EngSoftware/src/java/DAO/AvaliacaoDAO.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProjectoFinalEngSoftware/ProjectoFinal_EngSoftware/src/java/Controller/AvaliacaoServlet.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProjectoFinalEngSoftware/ProjectoFinal_EngSoftware/web/Curso/FRMListarCursos.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProjectoFinalEngSoftware/ProjectoFinal_EngSoftware/web/Estudante/FRMListarEstudantes.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProjectoFinalEngSoftware/ProjectoFinal_EngSoftware/web/Avaliacao/FRMCadastroAvaliacao.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProjectoFinalEngSoftware/ProjectoFinal_EngSoftware/web/includes/menu.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProjectoFinalEngSoftware/ProjectoFinal_EngSoftware/web/Admin_dashbaord/dashboard-analytics.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProjectoFinalEngSoftware/ProjectoFinal_EngSoftware/web/includes/style.css</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProjectoFinalEngSoftware/ProjectoFinal_EngSoftware/web/Disciplina/FRMListarDisciplinas.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProjectoFinalEngSoftware/ProjectoFinal_EngSoftware/web/Turma/FRMListarTurmas.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProjectoFinalEngSoftware/ProjectoFinal_EngSoftware/web/Avaliacao/FRMListarAvaliacoes.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProjectoFinalEngSoftware/ProjectoFinal_EngSoftware/web/Home_Page/PesquisarEstudante.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProjectoFinalEngSoftware/ProjectoFinal_EngSoftware/src/java/Controller/CursoServlet.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProjectoFinalEngSoftware/ProjectoFinal_EngSoftware/web/NotaRealiza/FRMListarRealizas.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ProjectoFinalEngSoftware/ProjectoFinal_EngSoftware/web/Home_Page/Home.jsp</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
