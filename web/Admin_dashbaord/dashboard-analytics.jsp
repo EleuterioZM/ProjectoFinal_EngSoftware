@@ -84,9 +84,9 @@
                             </a>
                             <div class="collapse" id="sidebarStudentManagement">
                                 <ul class="side-nav-second-level">
-                                    <li>
-                                        <a data-bs-toggle="collapse" href="#submenuTurma" aria-expanded="false" aria-controls="submenuTurma">Estudantes <span class="menu-arrow"></span></a>
-                                        <div class="collapse" id="submenuTurma">
+                                     <li>
+                                        <a data-bs-toggle="collapse" href="#submenuEstudantes" aria-expanded="false" aria-controls="submenuEstudantes">Estudantes <span class="menu-arrow"></span></a>
+                                        <div class="collapse" id="submenuEstudantes">
                                             <ul class="side-nav-third-level">
                                                 <li><a href="../Estudante/FRMListarEstudantes.jsp">Listar Estudantes</a></li>
                                                 <li><a href="../Estudante/FRMCadastroEstudantes.jsp">Cadastrar Estudante</a></li>

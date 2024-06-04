@@ -26,11 +26,20 @@
               <li class="nav-item">
                   <a class="nav-link" href="../Avaliacao/FRMListarAvaliacoes.jsp"> Avaliacoes </a>
               </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="../Avaliacao/../Turma/FRMListarTurmas.jsp"> Turmas </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="../NotaRealiza/FRMListarRealizas.jsp"> Realizacoes </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="../Disciplina/FRMListarDisciplinas.jsp"> Disciplinas </a>
+              </li>
             </ul>
             <div class="user_option">
-              <a href="">
+                <a href="../Admin_dashbaord/dashboard-analytics.jsp">
                 <span>
-                  Login
+                  Admin
                 </span>
               </a>
               <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">

@@ -12,11 +12,11 @@
         <!-- Adicione aqui os links para os arquivos CSS do Bootstrap -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <!-- Adicione aqui os links para os arquivos CSS de ícones, como Font Awesome -->
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-              <link rel="stylesheet" type="text/css" href="../includes/bootstrap.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../includes/bootstrap.css" />
         <link href="../includes/style.css" rel="stylesheet" />
-         <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-    
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
         <style>
             body {
                 background-color: #ff9966; /* Cor de fundo */
@@ -25,7 +25,7 @@
 
     </head>
     <body>
-       <%@include file="../includes/menu.jsp" %>
+        <%@include file="../includes/menu.jsp" %>
 
         <div class="container mt-4">
             <%-- Exibir mensagens de sucesso ou erro --%>
@@ -62,10 +62,10 @@
             <h1 class="mt-4" style="color:white">Listagem de Avaliações</h1>
 
             <div class="text-right mb-4">
-<a href="${pageContext.request.contextPath}/AvaliacaoServlet?action=report" class="btn btn-info">Gerar Relatório</a>
+                <a href="${pageContext.request.contextPath}/AvaliacaoServlet?action=report" class="btn btn-info">Gerar Relatório</a>
 
 
-                <a href="${pageContext.request.contextPath}/Avaliacao/FRMCadastroAvaliacao.jsp" class="btn btn-success">Adicionar Curso</a>
+                <a href="${pageContext.request.contextPath}/Avaliacao/FRMCadastroAvaliacao.jsp" class="btn btn-success">Adicionar Avaliacao</a>
             </div>
             <table class="table table-striped mt-4 table-dark">
                 <thead>
@@ -143,8 +143,8 @@
                 });
             });
         </script>
-          <script src="../includes/jquery.js"></script>
- 
+        <script src="../includes/jquery.js"></script>
+
         <script src="../includes/custom.js"></script>
     </body>
 </html>

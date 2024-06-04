@@ -13,16 +13,16 @@
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <!-- Adicione aqui os links para os arquivos CSS de ícones, como Font Awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-             <link rel="stylesheet" type="text/css" href="../includes/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="../includes/bootstrap.css" />
         <link href="../includes/style.css" rel="stylesheet" />
-         <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-    
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
         <style>
             body {
                 background-color: #ff9966; /* Cor de fundo */
             }
         </style>
-      
+
         <script>
             // Chamar a função para exibir a mensagem de exclusão com sucesso quando a página for carregada
             window.onload = function () {
@@ -71,7 +71,8 @@
             <h1 class="mt-4" style="color:white">Listagem de Turmas</h1>
 
             <div class="text-right mb-4">
-                <a href="${pageContext.request.contextPath}/TurmaServlet?action=report" class="btn btn-info" download>Gerar Relatório</a>
+
+                <a href="${pageContext.request.contextPath}/TurmaServlet?action=report" class="btn btn-info">Gerar Relatório</a>
 
                 <a href="${pageContext.request.contextPath}/Turma/FRMCadastroTurma.jsp" class="btn btn-success">Adicionar Turma</a>
             </div>
@@ -134,23 +135,23 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-       <script>
-  
-    // Esconder alertas após 5 segundos
-$(document).ready(function () {
-    $(".alert").each(function (index, element) {
-        var alert = $(element);
-        setTimeout(function () {
-            alert('close'); // Remova ".alert" da chamada
-        }, 5000);
-    });
-});
+        <script>
 
-    
-</script>
+                                // Esconder alertas após 5 segundos
+                                $(document).ready(function () {
+                                    $(".alert").each(function (index, element) {
+                                        var alert = $(element);
+                                        setTimeout(function () {
+                                            alert('close'); // Remova ".alert" da chamada
+                                        }, 5000);
+                                    });
+                                });
 
-  <script src="../includes/jquery.js"></script>
- 
+
+        </script>
+
+        <script src="../includes/jquery.js"></script>
+
         <script src="../includes/custom.js"></script>
     </body>
 </html>

@@ -107,16 +107,25 @@ public final class FRMListarCursos_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("          <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n");
       out.write("            <ul class=\"navbar-nav  \">\n");
       out.write("              <li class=\"nav-item active\">\n");
-      out.write("                <a class=\"nav-link\" href=\"index.html\">Página Inicial <span class=\"sr-only\">(current)</span></a>\n");
+      out.write("                  <a class=\"nav-link\" href=\"../Home_Page/Home.jsp\">Página Inicial <span class=\"sr-only\">(current)</span></a>\n");
       out.write("              </li>\n");
       out.write("              <li class=\"nav-item\">\n");
-      out.write("                <a class=\"nav-link\" href=\"cursos.html\"> Cursos</a>\n");
+      out.write("                  <a class=\"nav-link\" href=\"../Curso/FRMListarCursos.jsp\"> Cursos</a>\n");
       out.write("              </li>\n");
       out.write("              <li class=\"nav-item\">\n");
-      out.write("                <a class=\"nav-link\" href=\"alunos.html\">Alunos </a>\n");
+      out.write("                  <a class=\"nav-link\" href=\"../Estudante/FRMListarEstudantes.jsp\">Estudantes </a>\n");
       out.write("              </li>\n");
       out.write("              <li class=\"nav-item\">\n");
-      out.write("                <a class=\"nav-link\" href=\"matriculas.html\"> Matrículas </a>\n");
+      out.write("                  <a class=\"nav-link\" href=\"../Avaliacao/FRMListarAvaliacoes.jsp\"> Avaliacoes </a>\n");
+      out.write("              </li>\n");
+      out.write("              <li class=\"nav-item\">\n");
+      out.write("                  <a class=\"nav-link\" href=\"../Avaliacao/../Turma/FRMListarTurmas.jsp\"> Turmas </a>\n");
+      out.write("              </li>\n");
+      out.write("              <li class=\"nav-item\">\n");
+      out.write("                  <a class=\"nav-link\" href=\"../NotaRealiza/FRMListarRealizas.jsp\"> Realizacoes </a>\n");
+      out.write("              </li>\n");
+      out.write("              <li class=\"nav-item\">\n");
+      out.write("                  <a class=\"nav-link\" href=\"../Disciplina/FRMListarDisciplinas.jsp\"> Disciplinas </a>\n");
       out.write("              </li>\n");
       out.write("            </ul>\n");
       out.write("            <div class=\"user_option\">\n");
@@ -193,7 +202,7 @@ public final class FRMListarCursos_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                <tbody>\n");
       out.write("                    ");
 
-                        int pageSize = 6;
+                        int pageSize = 5;
                         int currentPage = (request.getParameter("page") != null) ? Integer.parseInt(request.getParameter("page")) : 1;
                         CursoDAO cursoDAO = new CursoDAO();
                         List<Curso> listaCursos = cursoDAO.listarCursos();
