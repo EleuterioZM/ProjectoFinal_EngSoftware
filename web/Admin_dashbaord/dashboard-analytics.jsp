@@ -152,7 +152,7 @@
                             <div class="collapse" id="sidebarReports">
                                 <ul class="side-nav-second-level">
                                     <li>
-                                        <a href="#">Relatório de Curso</a>
+                                         <a href="${pageContext.request.contextPath}/CursoServlet?action=report">Relatório de Curso</a>
                                     </li>
                                     <li>
                                         <a href="${pageContext.request.contextPath}/TurmaServlet?action=report">Relatório de Turma</a>
